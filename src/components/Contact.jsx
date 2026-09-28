@@ -48,7 +48,7 @@ const Contact = () => {
               <input className='w-1/2 h-13 border rounded-md ' type="text" placeholder='first name' />
               <input className='w-1/2 h-13 border rounded-md' type="text" placeholder='last name' />
             </span>
-            <input className='w-full h-13 focus:outline-0 border rounded-md p-3' type="text" placeholder='last name' />
+            <input className='w-full h-13 focus:outline-0 border rounded-md p-3' type="text" placeholder='email' />
             <textarea className='w-full focus:outline-0 border p-3 h-35'>
 
             </textarea>

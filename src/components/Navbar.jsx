@@ -11,7 +11,7 @@ const Navbar = () => {
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
-          <li>Products</li>
+          <li><Link to='/products'>Products</Link></li>
           <li>Services</li>
         </ul>
         {/* <button className='bg-white rounded-full pl-5 pr-5 h-9 cursor-pointer text-sm font-mono'>
