@@ -54,9 +54,18 @@ const Home = () => {
                     </div>
                 </section>
                 <section className='grid grid-cols-1 lg:grid-cols-3 h-100 lg:h-[25vh] p-4 gap-5'>
-                    <div className='bg-red-300 h-full'></div>
-                    <div className='bg-blue-300 h-full'></div>
-                    <div className='bg-green-300 h-full'></div>
+                    <div className='bg-white rounded-md h-full p-4 text-center'>
+                        <h4 className=' font-bold text-sm'>INSTALL</h4>
+                        <p className='text-lg font-light '>Complete solar panel installation</p>
+                    </div>
+                    <div className='bg-white rounded-md h-full p-4 text-center'>
+                        <h4 className=' font-bold text-sm'>MAINTAIN</h4>
+                        <p className='text-lg font-light '>Cleaning, inspection & repairs</p>
+                    </div>
+                    <div className='bg-white rounded-md h-full p-4 text-center'>
+                        <h4 className=' font-bold text-sm'>POWER</h4>
+                        <p className='text-lg font-light '>Solar panels, batteries & inverters</p>
+                    </div>
                 </section>
             </section>
             <section className='bg-gray-100 h-20 flex justify-between p-2 pl-10 pr-10'>
