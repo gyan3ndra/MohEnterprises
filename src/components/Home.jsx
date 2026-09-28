@@ -101,7 +101,7 @@ const Home = () => {
             <footer className='site-footer'>
                 <div className='footer-inner'>
                     <div className='footer-brand'>
-                        <div className='brand-mark'>MOH</div>
+                        <div className='brand-mark'>MOH CHAMAR</div>
                         <h3>Moh Enterprises</h3>
                         <p>
                             Delivering smart, sustainable solar power systems for homes, businesses,
@@ -115,7 +115,7 @@ const Home = () => {
                             <ul>
                                 <li>Home</li>
                                 <li>About Us</li>
-                                <li>Projects</li>
+                                <li>Products</li>
                                 <li>Services</li>
                             </ul>
                         </div>
@@ -135,7 +135,7 @@ const Home = () => {
                             <ul>
                                 <li>+91 98XXXXXXXX</li>
                                 <li>hello@mohenterprises.com</li>
-                                <li>Chennai, India</li>
+                                <li>Indore, India</li>
                             </ul>
                         </div>
                     </div>
