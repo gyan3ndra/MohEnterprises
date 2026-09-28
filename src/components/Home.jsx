@@ -14,7 +14,7 @@ import solarimg from '../assets/solar.png'
 import wrenchimg from '../assets/wrench.png'
 
 const Home = () => {
-    const logo = [s6, s5, s3, s4, s2, s1]
+    const companyLogo = [s6, s5, s3, s4, s2, s1]
 
     const works = [
         {
@@ -77,7 +77,7 @@ const Home = () => {
                 <section className='grid grid-cols-1 lg:grid-cols-3 h-100 lg:h-[25vh] p-4 gap-5'>
                     {card.map((e) => {
                         return (
-                            <div className='bg-white rounded-md h-full p-4 flex justify-center items-center gap-5'>
+                            <div key={e.title} className='bg-white rounded-md h-full p-4 flex justify-center items-center gap-5'>
                                 <img src={e.img} alt="" />
                                 <div>
                                     <h4 className=' font-extrabold text-lg'>{e.title}</h4>
@@ -89,9 +89,9 @@ const Home = () => {
 
                 </section>
             </section>
-            <section className='bg-gray-100 h-20 flex justify-between p-2 pl-10 pr-10'>
+            <section className='bg-gray-50 h-20 flex justify-center gap-15 p-2 pl-10 pr-10'>
                 {
-                    logo.map((e, index) => {
+                    companyLogo.map((e, index) => {
                         return (
                             <img key={index} src={e} alt="" />
                         )
