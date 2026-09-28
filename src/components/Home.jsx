@@ -9,9 +9,12 @@ import s6 from '../assets/logo/s6.png'
 import Reside from '../assets/Residential Solar Installation.png'
 import Commercial from '../assets/CommercialPowerSystem.png'
 import Industrial from '../assets/IndustrialSolarProject.png'
+import powerimg from '../assets/power.png'
+import solarimg from '../assets/solar.png'
+import wrenchimg from '../assets/wrench.png'
 
 const Home = () => {
-    const logo = [s6,s5,s3,s4,s2,s1]
+    const logo = [s6, s5, s3, s4, s2, s1]
 
     const works = [
         {
@@ -40,6 +43,24 @@ const Home = () => {
         }
     ]
 
+    const card = [
+        {
+            img: solarimg,
+            title: "INSTALL",
+            msg: "Complete solar panel installation",
+        },
+        {
+            img: wrenchimg,
+            title: "MAINTAIN",
+            msg: "Cleaning, inspection & repairs",
+        },
+        {
+            img: powerimg,
+            title: "POWER",
+            msg: "Solar panels, batteries & inverters",
+        },
+    ];
+
     return (
         <>
             <section className='bg-white h-screen pt-13'>
@@ -54,24 +75,24 @@ const Home = () => {
                     </div>
                 </section>
                 <section className='grid grid-cols-1 lg:grid-cols-3 h-100 lg:h-[25vh] p-4 gap-5'>
-                    <div className='bg-white rounded-md h-full p-4 text-center'>
-                        <h4 className=' font-bold text-sm'>INSTALL</h4>
-                        <p className='text-lg font-light '>Complete solar panel installation</p>
-                    </div>
-                    <div className='bg-white rounded-md h-full p-4 text-center'>
-                        <h4 className=' font-bold text-sm'>MAINTAIN</h4>
-                        <p className='text-lg font-light '>Cleaning, inspection & repairs</p>
-                    </div>
-                    <div className='bg-white rounded-md h-full p-4 text-center'>
-                        <h4 className=' font-bold text-sm'>POWER</h4>
-                        <p className='text-lg font-light '>Solar panels, batteries & inverters</p>
-                    </div>
+                    {card.map((e) => {
+                        return (
+                            <div className='bg-white rounded-md h-full p-4 flex justify-center items-center gap-5'>
+                                <img src={e.img} alt="" />
+                                <div>
+                                    <h4 className=' font-extrabold text-lg'>{e.title}</h4>
+                                    <p className='text-lg font-light '>{e.msg}</p>
+                                </div>
+                            </div>
+                        )
+                    })}
+
                 </section>
             </section>
             <section className='bg-gray-100 h-20 flex justify-between p-2 pl-10 pr-10'>
                 {
                     logo.map((e, index) => {
-                        return(
+                        return (
                             <img key={index} src={e} alt="" />
                         )
                     })
