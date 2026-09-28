@@ -132,7 +132,7 @@ const Home = () => {
                 <div className='footer-inner'>
                     <div className='footer-brand'>
                         <div className='brand-mark'>MOH CHAMAR</div>
-                        <h3>Moh Enterprises</h3>
+                        <h3>MOH ENTERPRISES</h3>
                         <p>
                             Delivering smart, sustainable solar power systems for homes, businesses,
                             and industrial facilities with clean energy that boosts efficiency and value.
