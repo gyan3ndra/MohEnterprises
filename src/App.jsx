@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar.jsx'
-import Home from './components/Home.jsx'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <Home/>
+    <Outlet/>
     </>
   )
 }
