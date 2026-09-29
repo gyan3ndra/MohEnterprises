@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+//h
 const Navbar = ({ onNavigate }) => {
   // const [menuOpen, setMenuOpen] = useState(false)
 
