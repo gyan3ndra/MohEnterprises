@@ -15,7 +15,7 @@ import solarimg from '../assets/solar.png'
 import wrenchimg from '../assets/wrench.png'
 
 const Home = () => {
-    const logo = [s6, s5, s3, s4, s2, s1]
+    const companyLogo = [s6, s5, s3, s4, s2, s1]
 
     const works = [
         {
@@ -78,7 +78,7 @@ const Home = () => {
                 <section className='grid grid-cols-1 lg:grid-cols-3 h-100 lg:h-[25vh] p-4 gap-5'>
                     {card.map((e, index) => {
                         return (
-                            <div key={index} className='bg-white rounded-md h-full p-4 flex justify-center items-center gap-5'>
+                            <div className='bg-white rounded-md h-full p-4 flex justify-center items-center gap-5'>
                                 <img src={e.img} alt="" />
                                 <div>
                                     <h4 className=' font-extrabold text-lg'>{e.title}</h4>
@@ -90,9 +90,9 @@ const Home = () => {
 
                 </section>
             </section>
-            <section className='bg-gray-100 h-20 flex justify-between p-2 pl-10 pr-10'>
+            <section className='bg-gray-50 h-20 flex justify-center gap-15 p-2 pl-10 pr-10'>
                 {
-                    logo.map((e, index) => {
+                    companyLogo.map((e, index) => {
                         return (
                             <img key={index} src={e} alt="" />
                         )
@@ -129,7 +129,54 @@ const Home = () => {
                 </div>
             </section>
 
-            <Footer />
+            <footer className='site-footer'>
+                <div className='footer-inner'>
+                    <div className='footer-brand'>
+                        <div className='brand-mark'>MOH CHAMAR</div>
+                        <h3>Moh Enterprises</h3>
+                        <p>
+                            Delivering smart, sustainable solar power systems for homes, businesses,
+                            and industrial facilities with clean energy that boosts efficiency and value.
+                        </p>
+                    </div>
+
+                    <div className='footer-links'>
+                        <div>
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li>Home</li>
+                                <li>About Us</li>
+                                <li>Products</li>
+                                <li>Services</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4>Services</h4>
+                            <ul>
+                                <li>Residential Solar</li>
+                                <li>Commercial Solar</li>
+                                <li>Industrial Systems</li>
+                                <li>Maintenance</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4>Contact</h4>
+                            <ul>
+                                <li>+91 98XXXXXXXX</li>
+                                <li>hello@mohenterprises.com</li>
+                                <li>Indore, India</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='footer-bottom'>
+                    <span>© 2026 MOH Enterprises</span>
+                    <span>Powering a greener future</span>
+                </div>
+            </footer>
         </>
     )
 }
