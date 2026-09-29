@@ -14,7 +14,7 @@ const Navbar = ({ onNavigate }) => {
 
       <nav className='flex bg-black/70 backdrop-blur-lg w-fit p-2 items-center rounded-full gap-10'>
         <div className='h-9 w-9 rounded-full bg-white font-semibold flex justify-center items-center'>M</div>
-        <ul className='flex text-slate-200 text-sm gap-10 *:hover:text-blue-300 *:cursor-pointer'>
+        <ul className='flex text-slate-200 text-sm gap-10 *:hover:text-blue-300 *:cursor-pointer hidden md:flex'>
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
