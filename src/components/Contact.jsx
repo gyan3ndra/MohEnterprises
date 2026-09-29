@@ -32,7 +32,7 @@ const Contact = () => {
                 return (
                   <div key={e.title} className='min-w-0'>
                     <h3 className='font-bold text-slate-900 text-lg md:text-2xl'>{e.title}</h3>
-                    <p className='break-words font-light text-sm md:text-md text-slate-600'>{e.content}</p>
+                    <p className='wrap-break-words font-light text-sm md:text-md text-slate-600'>{e.content}</p>
                   </div>
                 )
               })
