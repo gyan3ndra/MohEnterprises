@@ -441,7 +441,7 @@ img {
 .small-card {
   width: 280px;
   height: 220px;
-  right: -90px;
+  right: -30px;
   bottom: -90px;
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.92), rgba(16, 185, 129, 0.85));
 }
