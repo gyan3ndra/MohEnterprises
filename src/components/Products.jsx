@@ -4,11 +4,16 @@ import panelimg from '../assets/products/panel.jpg'
 import wireimg from '../assets/products/wire.jpg'
 import inverterimg from '../assets/products/inverter.jpg'
 import structureimg from '../assets/products/structure.jpg'
+import distributionboximg from '../assets/products/otherproducts/distributionbox.jpg'
+import batteryimg from '../assets/products/otherproducts/battery.jpg'
+import accessoriesimg from '../assets/products/otherproducts/accessories.jpg'
+import earthingkitimg from '../assets/products/otherproducts/earthingkit.jpg'
 import { InverterContent, StructureContent,PanelContent,WireContent } from './ProductContent'
 import Footer from './Footer'
 
 const Products = () => {
   const [current, setCurrent] = useState(0);
+  const otherproducts = [batteryimg,accessoriesimg,distributionboximg,earthingkitimg]
   const boxes = [
     { id: 1, color: "bg-red-400", text: "Box 1" },
     { id: 2, color: "bg-blue-400", text: "Box 2" },
@@ -57,39 +62,31 @@ const Products = () => {
 
   return (
     <section className='min-h-screen bg-white md:pt-15 pt-20'>
-      <section className='mt-0 m-5 md:m-10 rounded-2xl bg-black min-h-110 lg:p-3 grid grid-cols-1 lg:grid-cols-2'>
+      <section className='mt-0 m-3 md:m-10 rounded-2xl bg-slate-950 min-h-110 lg:p-3 grid grid-cols-1 lg:grid-cols-2'>
         <div className="h-full p-2 flex flex-col justify-between gap-3">
 
           <div className='grid grid-cols-2 gap-2 '>
             {/* Column 1 */}
             <div className="flex flex-col gap-2">
-              <div className="bg-red-400 h-32 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300">
+              <div className=" bg-white h-32 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 overflow-hidden group"><img className='w-full h-full object-contain rounded-2xl scale-140 group-hover:scale-160 transition-all duration-300' src={otherproducts[0]} alt="" /></div>
 
-              </div>
-
-              <div className="bg-green-400 h-52 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300">
-
-              </div>
+              <div className="bg-white h-52 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 overflow-hidden group"><img className='w-full h-full object-contain rounded-2xl group-hover:scale-120 transition-all duration-300' src={otherproducts[1]} alt="" /></div>
             </div>
 
             {/* Column 2 */}
             <div className="flex flex-col gap-2">
-              <div className="bg-blue-400 h-52 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300">
+              <div className="bg-white h-52 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 overflow-hidden group"><img className='w-full h-full object-contain rounded-2xl group-hover:scale-120 transition-all duration-300' src={otherproducts[2]} alt="" /></div>
 
-              </div>
-
-              <div className="bg-purple-400 h-32 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300">
-
-              </div>
+              <div className="bg-white h-32 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 group overflow-hidden"><img className='w-full h-full object-contain rounded-2xl scale-140 group-hover:scale-160 transition-all duration-300' src={otherproducts[3]} alt="" /></div>
             </div>
           </div>
           <div className='w-full bg-white rounded-2xl h-full flex items-center p-2'>
             <button  onClick={() => document.getElementById("mainproducts")?.scrollIntoView({behavior: "smooth"})
-  } className='bg-black overflow-hidden p-4 md:p-2 w-40 rounded-2xl text-sm text-white cursor-pointer group relative'>
-              <span className="relative z-10 transition-colors duration-500 group-hover:text-black font-semibold">
+  } className='bg-slate-950 overflow-hidden p-4 md:p-2 w-40 rounded-2xl text-sm text-white cursor-pointer group relative'>
+              <span className="relative z-10 transition-colors duration-500 group-hover:text-white font-semibold">
                 More Products
               </span>
-              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-red-300 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
+              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-blue-500 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
             </button>
           </div>
         </div>
