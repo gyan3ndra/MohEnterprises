@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer.jsx'
 import msgimg from '../assets/msg.png'
 import s1 from '../assets/logo/s1.png'
 import s2 from '../assets/logo/s2.png'
@@ -75,9 +76,9 @@ const Home = () => {
                     </div>
                 </section>
                 <section className='grid grid-cols-1 lg:grid-cols-3 h-100 lg:h-[25vh] p-4 gap-5'>
-                    {card.map((e) => {
+                    {card.map((e, index) => {
                         return (
-                            <div className='bg-white rounded-md h-full p-4 flex justify-center items-center gap-5'>
+                            <div key={index} className='bg-white rounded-md h-full p-4 flex justify-center items-center gap-5'>
                                 <img src={e.img} alt="" />
                                 <div>
                                     <h4 className=' font-extrabold text-lg'>{e.title}</h4>
@@ -128,54 +129,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <footer className='site-footer'>
-                <div className='footer-inner'>
-                    <div className='footer-brand'>
-                        <div className='brand-mark'>MOH CHAMAR</div>
-                        <h3>Moh Enterprises</h3>
-                        <p>
-                            Delivering smart, sustainable solar power systems for homes, businesses,
-                            and industrial facilities with clean energy that boosts efficiency and value.
-                        </p>
-                    </div>
-
-                    <div className='footer-links'>
-                        <div>
-                            <h4>Quick Links</h4>
-                            <ul>
-                                <li>Home</li>
-                                <li>About Us</li>
-                                <li>Products</li>
-                                <li>Services</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4>Services</h4>
-                            <ul>
-                                <li>Residential Solar</li>
-                                <li>Commercial Solar</li>
-                                <li>Industrial Systems</li>
-                                <li>Maintenance</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4>Contact</h4>
-                            <ul>
-                                <li>+91 98XXXXXXXX</li>
-                                <li>hello@mohenterprises.com</li>
-                                <li>Indore, India</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='footer-bottom'>
-                    <span>© 2026 MOH Enterprises</span>
-                    <span>Powering a greener future</span>
-                </div>
-            </footer>
+            <Footer />
         </>
     )
 }
