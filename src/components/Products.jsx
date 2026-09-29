@@ -1,16 +1,27 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import panelimg from '../assets/products/panel.jpg'
 import wireimg from '../assets/products/wire.jpg'
 import inverterimg from '../assets/products/inverter.jpg'
 import structureimg from '../assets/products/structure.jpg'
 
 const Products = () => {
+  const [current, setCurrent] = useState(0);
   const boxes = [
     { id: 1, color: "bg-red-400", text: "Box 1" },
     { id: 2, color: "bg-blue-400", text: "Box 2" },
     { id: 3, color: "bg-green-400", text: "Box 3" },
     { id: 4, color: "bg-purple-400", text: "Box 4" },
   ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % boxes.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [boxes.length]);
+
+
   return (
     <section className='min-h-screen bg-white md:pt-15 pt-20'>
       <section className='mt-0 m-5 md:m-10 rounded-2xl bg-black h-110 lg:p-3 grid lg:grid-cols-2'>
@@ -44,8 +55,26 @@ const Products = () => {
           </div>
         </div>
         {/* grid 2 */}
-        <div className='h-full'>
+        <div className='h-full flex justify-center items-center'>
+          <div className="w-full lg:w-3/4 overflow-hidden rounded-2xl">
 
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{
+                transform: `translateX(-${current * 100}%)`,
+              }}
+            >
+              {boxes.map((box) => (
+                <div
+                  key={box.id}
+                  className={`min-w-full h-80 ${box.color} flex items-center justify-center text-3xl font-bold`}
+                >
+                  {box.text}
+                </div>
+              ))}
+            </div>
+
+          </div>
         </div>
       </section>
       <h1 className='font-bold text-4xl text-center text-gray-900'>Available Products</h1>

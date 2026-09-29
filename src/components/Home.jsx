@@ -64,7 +64,7 @@ const Home = () => {
 
     return (
         <>
-            <section className='bg-white min-h-[100svh] pt-20 pb-6 lg:pt-24'>
+            <section className='bg-white min-h-scrren pt-15 pb-6 lg:pt-15'>
                 <section className='flex min-h-[48vh] flex-col items-center justify-center px-4 py-8'>
                     <div className='w-full max-w-6xl p-3 text-center'>
                         <span className='flex flex-wrap gap-4 md:gap-10 justify-center w-full items-center'>
