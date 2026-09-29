@@ -64,21 +64,21 @@ const Home = () => {
 
     return (
         <>
-            <section className='bg-white h-screen pt-13'>
-                <section className='flex flex-col items-center justify-center h-[65vh]'>
-                    <div className='p-3'>
-                        <span className='flex gap:7 md:gap-10 justify-center w-full items-center'>
-                            <h1 className='text-[#2F2F2F] text-5xl lg:text-8xl font-extrabold'>MOH</h1>
+            <section className='bg-white min-h-[100svh] pt-20 pb-6 lg:pt-24'>
+                <section className='flex min-h-[48vh] flex-col items-center justify-center px-4 py-8'>
+                    <div className='w-full max-w-6xl p-3 text-center'>
+                        <span className='flex flex-wrap gap-4 md:gap-10 justify-center w-full items-center'>
+                            <h1 className='text-[#2F2F2F] text-[clamp(2.5rem,10vw,8rem)] leading-none font-extrabold'>MOH</h1>
                             <button className='animate-pop-in lg:p-5 p-3 h-10 justify-center items-center gap-5 lg:gap-9 flex lg:h-15 rounded-md bg-[#F87061] text-white font-bold text-sm lg:text-md cursor-pointer transition-all duration-800 hover:bg-[#ba4b3e]'>Lets Start A Talk! <img className='w-7 h-7 lg:w-10 lg:h-10 invert' src={msgimg} /></button>
                         </span>
-                        <h1 className='text-[#2F2F2F] text-5xl lg:text-8xl font-extrabold'>ENTERPRISES</h1>
-                        <p className='lg:text-lg text-slate-500 font-light'>Smart solar solutions designed to maximize your energy independence and lifetime savings.</p>
+                        <h1 className='text-[#2F2F2F] text-[clamp(2.1rem,9vw,8rem)] leading-[0.98] font-extrabold'>ENTERPRISES</h1>
+                        <p className='mx-auto mt-4 max-w-2xl text-base lg:text-lg text-slate-500 font-light'>Smart solar solutions designed to maximize your energy independence and lifetime savings.</p>
                     </div>
                 </section>
-                <section className='grid grid-cols-1 lg:grid-cols-3 h-100 lg:h-[25vh] p-4 gap-5'>
+                <section className='grid grid-cols-1 md:grid-cols-3 p-4 gap-3 md:gap-5'>
                     {card.map((e, index) => {
                         return (
-                            <div className='bg-white rounded-md h-full p-4 flex justify-center items-center gap-5'>
+                            <div key={e.title} className='bg-white rounded-md min-h-28 p-4 flex justify-center items-center gap-5'>
                                 <img src={e.img} alt="" />
                                 <div>
                                     <h4 className=' font-extrabold text-lg'>{e.title}</h4>
@@ -90,11 +90,11 @@ const Home = () => {
 
                 </section>
             </section>
-            <section className='bg-gray-50 h-20 flex justify-center gap-15 p-2 pl-10 pr-10'>
+            <section className='company-logos'>
                 {
                     companyLogo.map((e, index) => {
                         return (
-                            <img key={index} src={e} alt="" />
+                            <img key={index} src={e} alt={`Solar partner ${index + 1}`} />
                         )
                     })
                 }
