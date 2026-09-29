@@ -26,7 +26,7 @@ const Contact = () => {
         <div>
           <h1 className='text-4xl sm:text-5xl md:text-6xl leading-tight font-bold'>Lets Start A Converstaion!</h1>
           <p className='text-md md:text-lg font-light'>Have questions about solar panels, pricing, or installation? Give us a call and our team will help you out.</p>
-          <div className='w-full p-1 md:p-3 mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4'>
+          <div className='w-full p-1 md:p-3 mt-5 grid grid-cols-2 gap-4'>
             {
               contactdetails.map((e) => {
                 return (

@@ -22,7 +22,13 @@ const Navbar = ({ onNavigate }) => {
           <li>Services</li>
           {/* <li><button type='button' onClick={() => onNavigate('/contact')}>Contact</button></li> */}
         </ul>
-        <a className='site-nav-phone' href='tel:+919800000000'>+91 98XXXXXXXX</a>
+        <a className="relative flex items-center overflow-hidden bg-white rounded-full px-5 h-9 cursor-pointer text-sm font-mono group">
+          <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
+            +91 98XXXXXXXX
+          </span>
+
+          <span className="absolute inset-y-0 left-0 w-0 bg-[#F87061] transition-all duration-700 ease-in-out group-hover:w-full"></span>
+        </a>
       </nav>
     </header>
   )
