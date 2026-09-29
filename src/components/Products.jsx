@@ -8,14 +8,15 @@ import distributionboximg from '../assets/products/otherproducts/distributionbox
 import batteryimg from '../assets/products/otherproducts/battery.jpg'
 import accessoriesimg from '../assets/products/otherproducts/accessories.jpg'
 import earthingkitimg from '../assets/products/otherproducts/earthingkit.jpg'
-import { InverterContent, StructureContent,PanelContent,WireContent } from './ProductContent'
+import pantyimg from '../assets/products/otherproducts/panty.jpg'
+import { InverterContent, StructureContent, PanelContent, WireContent } from './ProductContent'
 import Footer from './Footer'
 
 const Products = () => {
   const [current, setCurrent] = useState(0);
-  const otherproducts = [batteryimg,accessoriesimg,distributionboximg,earthingkitimg]
+  const otherproducts = [batteryimg, accessoriesimg, distributionboximg, earthingkitimg]
   const boxes = [
-    { id: 1, color: "bg-red-400", text: "Box 1" },
+    { id: 1, color: "bg-red-400", text: "Box 1", img: pantyimg },
     { id: 2, color: "bg-blue-400", text: "Box 2" },
     { id: 3, color: "bg-green-400", text: "Box 3" },
     { id: 4, color: "bg-purple-400", text: "Box 4" },
@@ -101,11 +102,8 @@ const Products = () => {
               }}
             >
               {boxes.map((box) => (
-                <div
-                  key={box.id}
-                  className={`min-w-full h-80 ${box.color} flex items-center justify-center text-3xl font-bold`}
-                >
-                  {box.text}
+                <div key={box.id} className={`min-w-full h-80 ${box.color} flex items-center justify-center text-3xl font-bold`}>
+                  <img className='w-full h-full  object-cover' src={box.img} alt="" />
                 </div>
               ))}
             </div>
@@ -126,13 +124,13 @@ const Products = () => {
                   <p className='text-gray-600 text-[7px] md:text-sm'>{e.description}</p>
                   {e.content}
                   <div className='flex justify-end'>
-                    <button className='p-2 md:p-3 relative cursor-pointer font-light bg-slate-900 w-1/2 text-sm group'>
+                    <a href={`/preview?type=${e.type}`} className='p-2 text-center md:p-3 relative cursor-pointer font-light bg-slate-900 w-1/2 text-sm group'>
                       <span className="relative z-10 text-white transition-colors duration-500 group-hover:text-black">
                         Preview
                       </span>
 
                       <span className="absolute inset-y-0 left-0 w-0 bg-gray-100 transition-all duration-700 ease-in-out group-hover:w-full"></span>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -142,7 +140,7 @@ const Products = () => {
 
       </section>
       <Footer />
-    </section>
+    </section >
   )
 }
 
