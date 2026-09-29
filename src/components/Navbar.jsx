@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = ({ onNavigate }) => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  // const [menuOpen, setMenuOpen] = useState(false)
 
-  const navigate = (path) => {
-    onNavigate(path)
-    setMenuOpen(false)
-  }
+  // const navigate = (path) => {
+  //   onNavigate(path)
+  //   setMenuOpen(false)
+  // }
 
   return (
     <header className='z-50 p-3 flex gap-10 items-center fixed top-0 w-full'>
@@ -17,9 +18,9 @@ const Navbar = ({ onNavigate }) => {
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
-          <li>Products</li>
+          <li><Link to='/Products'>Products</Link></li>
           <li>Services</li>
-          <li><button type='button' onClick={() => onNavigate('/contact')}>Contact</button></li>
+          {/* <li><button type='button' onClick={() => onNavigate('/contact')}>Contact</button></li> */}
         </ul>
         <a className='site-nav-phone' href='tel:+919800000000'>+91 98XXXXXXXX</a>
       </nav>
