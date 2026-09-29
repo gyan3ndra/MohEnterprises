@@ -21,7 +21,7 @@ const Contact = () => {
     }
   ]
   return (
-    <section className='pt-24 min-h-screen relative p-4 sm:p-6 lg:p-10'>
+    <section className='pt-20 min-h-screen p-4'>
       <section className='max-w-7xl mx-auto p-0 sm:p-4 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
         <div>
           <h1 className='text-4xl sm:text-5xl md:text-6xl leading-tight font-bold'>Lets Start A Converstaion!</h1>
@@ -42,7 +42,7 @@ const Contact = () => {
           <a className='text-lg md:text-lg font-light text-blue-700 hover:text-blue-900' href="">Get a Solar Estimate</a>
         </div>
         <div className='flex justify-center w-full p-0 sm:p-2'>
-          <div className='w-full max-w-xl bg-white p-3 sm:p-5 gap-3 flex flex-col shadow-md border-blue-400 md:border-b-10 md:border-r-10 rounded-2xl'>
+          <div className='w-full lg:w-[80%] max-w-xl bg-white p-3 sm:p-5 gap-3 flex flex-col shadow-lg rounded-2xl'>
             <h3 className='text-center font-bold text-3xl mb-3'>Contact Us</h3>
             <span className='grid grid-cols-1 sm:grid-cols-2 gap-3 *:p-3 *:focus:outline-0'>
               <input className='min-w-0 w-full h-13 border rounded-md' type="text" placeholder='first name' />
