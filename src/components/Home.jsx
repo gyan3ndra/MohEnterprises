@@ -92,7 +92,7 @@ const Home = () => {
     return (
         <>
             <section className='bg-white min-h-scrren pt-15 pb-6 lg:pt-15'>
-                <section className='flex min-h-[48vh] flex-col items-center justify-center px-4 py-8'>
+                <section className='flex min-h-[45vh] flex-col items-center justify-center px-4 py-8'>
                     <div className='w-full max-w-6xl p-3 text-center'>
                         <span className='flex gap-4 md:gap-10 justify-center w-full items-center'>
                             <h1 className='text-[#2F2F2F] text-[clamp(3.0rem,10vw,8rem)] leading-none font-extrabold'>MOH</h1>
