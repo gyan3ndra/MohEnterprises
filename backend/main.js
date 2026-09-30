@@ -16,7 +16,8 @@ app.use(cors({
 }))
 app.use(express.json())
 app.use('/products',products)
+
 app.get('/api',(req,res)=>{
-    res.status(200).json({message:'hello'})
+    res.status(200).json({message:'hell'})
 })
 app.listen(3000)
