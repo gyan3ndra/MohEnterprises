@@ -63,8 +63,8 @@ const Products = () => {
 
   return (
     <section className='min-h-screen bg-white md:pt-15 pt-20'>
-      <section className='mt-0 m-3 md:m-10 rounded-2xl bg-slate-950 min-h-110 lg:p-3 grid grid-cols-1 lg:grid-cols-2'>
-        <div className="h-full p-2 flex flex-col justify-between gap-3">
+      <section className='mt-0 m-3 md:m-10 rounded-2xl bg-slate-900 shadow-md min-h-110 lg:p-3 grid grid-cols-1 lg:grid-cols-2'>
+        <div className="h-full p-2 flex flex-col justify-between gap-3 order-2 sm:order-1">
 
           <div className='grid grid-cols-2 gap-2 '>
             {/* Column 1 */}
@@ -81,19 +81,26 @@ const Products = () => {
               <div className="bg-white h-32 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 group overflow-hidden"><img className='w-full h-full object-contain rounded-2xl scale-140 group-hover:scale-160 transition-all duration-300' src={otherproducts[3]} alt="" /></div>
             </div>
           </div>
-          <div className='w-full bg-white rounded-2xl h-full flex items-center p-2'>
+          <div className='w-full bg-white rounded-full h-full flex gap-2 sm:gap-3 items-center p-2'>
             <button  onClick={() => document.getElementById("mainproducts")?.scrollIntoView({behavior: "smooth"})
-  } className='bg-slate-950 overflow-hidden p-4 md:p-2 w-40 rounded-2xl text-sm text-white cursor-pointer group relative'>
-              <span className="relative z-10 transition-colors duration-500 group-hover:text-white font-semibold">
+  } className='bg-slate-950 overflow-hidden p-2 w-35 sm:w-40 rounded-2xl text-sm text-white cursor-pointer group relative'>
+              <span className="relative z-5 transition-colors duration-500 group-hover:text-white font-light">
                 More Products
               </span>
-              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-blue-500 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
+              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-violet-500 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
+            </button>
+            <button className='relative w-25 sm:w-30 rounded-2xl text-sm font-light h-full bg-violet-600 cursor-pointer text-white group overflow-hidden'>
+              <span className='relative z-5'>
+                Offers
+              </span>
+              <span className='absolute bg-slate-950 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
+
             </button>
           </div>
         </div>
         {/* grid 2 */}
-        <div className='h-full flex justify-center items-center'>
-          <div className="w-full lg:w-3/4 overflow-hidden rounded-2xl">
+        <div className='h-full flex justify-center items-center order-1 sm:order-2'>
+          <div className="w-full lg:w-3/4 overflow-hidden rounded-md">
 
             <div
               className="flex transition-transform duration-700 ease-in-out"
@@ -113,7 +120,7 @@ const Products = () => {
       </section>
       <h1 id='mainproducts' className='font-bold text-4xl text-center text-gray-900'>Available Products</h1>
       <p className='text-lg font-light text-center text-gray-800'>Power Your Future with Solar</p>
-      <section className='m-2 md:m-5 min-h-200 sm:min-h-150 grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
+      <section className='m-2 md:m-5 min-h-200 sm:min-h-130 grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
         {
           productcards.map((e) => {
             return (

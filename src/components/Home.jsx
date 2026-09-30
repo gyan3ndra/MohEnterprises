@@ -17,6 +17,33 @@ import wrenchimg from '../assets/wrench.png'
 const Home = () => {
     const companyLogo = [s6, s5, s3, s4, s2, s1]
 
+    const offercards = [
+        {
+            t1: 'LIMITED TIME OFFER',
+            t2: 'Upgrade to Solar & Save',
+            info: 'Get special pricing on selected solar panels for your home or business.',
+            t3: (<>Save up to{" "}<span className="text-white font-extrabold text-5xl">15%</span></>),
+            t4: 'Explore Offer →',
+            color: 'bg-red-300'
+        },
+        {
+            t1: 'SPECIAL PACKAGE',
+            t2: 'Go Solar, Save More',
+            info: 'Get panels, inverter, wires and mounting structure together at a package price.',
+            t3: 'Combo Deals Available',
+            t4: 'View Packages →',
+            color: 'bg-blue-300'
+        },
+        {
+            t1: 'INSTALLATION DEAL',
+            t2: 'Get Your Solar Setup Installed',
+            info: 'Professional installation support for selected solar systems.',
+            t3: 'Special Installation Pricing',
+            t4: 'Know More →',
+            color: 'bg-yellow-300'
+        }
+    ]
+
     const works = [
         {
             title: 'Residential Solar Installation',
@@ -67,11 +94,11 @@ const Home = () => {
             <section className='bg-white min-h-scrren pt-15 pb-6 lg:pt-15'>
                 <section className='flex min-h-[48vh] flex-col items-center justify-center px-4 py-8'>
                     <div className='w-full max-w-6xl p-3 text-center'>
-                        <span className='flex flex-wrap gap-4 md:gap-10 justify-center w-full items-center'>
-                            <h1 className='text-[#2F2F2F] text-[clamp(2.5rem,10vw,8rem)] leading-none font-extrabold'>MOH</h1>
-                            <button className='animate-pop-in lg:p-5 p-3 h-10 justify-center items-center gap-5 lg:gap-9 flex lg:h-15 rounded-md bg-[#F87061] text-white font-bold text-sm lg:text-md cursor-pointer transition-all duration-800 hover:bg-[#ba4b3e]'>Lets Start A Talk! <img className='w-7 h-7 lg:w-10 lg:h-10 invert' src={msgimg} /></button>
+                        <span className='flex gap-4 md:gap-10 justify-center w-full items-center'>
+                            <h1 className='text-[#2F2F2F] text-[clamp(3.0rem,10vw,8rem)] leading-none font-extrabold'>MOH</h1>
+                            <button className='animate-pop-in lg:p-5 p-3 h-10 justify-center items-center gap-5 lg:gap-9 flex lg:h-15 rounded-md bg-[#F87061] text-white font-bold text-[10px] sm:text-sm md:text-md cursor-pointer transition-all duration-800 hover:bg-[#ba4b3e]'>Lets Start A Talk! <img className='w-7 h-7 lg:w-10 lg:h-10 invert' src={msgimg} /></button>
                         </span>
-                        <h1 className='text-[#2F2F2F] text-[clamp(2.1rem,9vw,8rem)] leading-[0.98] font-extrabold'>ENTERPRISES</h1>
+                        <h1 className='text-[#2F2F2F] text-[clamp(3rem,9vw,8rem)] leading-[0.98] font-extrabold'>ENTERPRISES</h1>
                         <p className='mx-auto mt-4 max-w-2xl text-base lg:text-lg text-slate-500 font-light'>Smart solar solutions designed to maximize your energy independence and lifetime savings.</p>
                     </div>
                 </section>
@@ -100,7 +127,7 @@ const Home = () => {
                 }
             </section>
 
-            <section className='bg-slate-100 py-16 px-4 lg:px-10'>
+            <section className='bg-white py-16 px-4 lg:px-10'>
                 <div className='max-w-6xl mx-auto'>
                     <div className='mb-12 text-center'>
                         <p className='text-[#F87061] font-semibold uppercase tracking-[0.2em] text-sm'>Our Works</p>
@@ -128,55 +155,27 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <section id='OFFERS' className=' p-3'>
+                <div className='grid grid-cols-1 md:grid-cols-3 w-full p-3 lg:w-3/4 mx-auto h-fit gap-10'>
+                    {
+                        offercards.map((e) => {
+                            return (
+                                <div key={e} className={`relative shadow-lg p-4 ${e.color} h-80 md:h-90`}>
+                                    <div className={`absolute top-0 right-2 h-30 w-12 bg-slate-800`} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%)" }} />
+                                    <h3 className='text-md font-bold mt-5 font-mono '>{e.t1}</h3>
+                                    <h2 className='text-2xl w-3/4 font-semibold font-mono'>{e.t2}</h2>
+                                    <p className='text-md font-light mt-3'>{e.info}</p>
+                                    <h1 className='text-2xl font-bold text-center text-slate-900 mt-5'>{e.t3}</h1>
+                                    <div className='flex w-full justify-center'><a className='text-lg font-bold font-mono text-blue-900 mt-2' href="">{e.t4}</a></div>
 
-            <footer className='site-footer'>
-                <div className='footer-inner'>
-                    <div className='footer-brand'>
-                        <div className='brand-mark'>MOH CHAMAR</div>
-                        <h3>Moh Enterprises</h3>
-                        <p>
-                            Delivering smart, sustainable solar power systems for homes, businesses,
-                            and industrial facilities with clean energy that boosts efficiency and value.
-                        </p>
-                    </div>
-
-                    <div className='footer-links'>
-                        <div>
-                            <h4>Quick Links</h4>
-                            <ul>
-                                <li>Home</li>
-                                <li>About Us</li>
-                                <li>Products</li>
-                                <li>Services</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4>Services</h4>
-                            <ul>
-                                <li>Residential Solar</li>
-                                <li>Commercial Solar</li>
-                                <li>Industrial Systems</li>
-                                <li>Maintenance</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4>Contact</h4>
-                            <ul>
-                                <li>+91 98XXXXXXXX</li>
-                                <li>hello@mohenterprises.com</li>
-                                <li>Indore, India</li>
-                            </ul>
-                        </div>
-                    </div>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
+            </section>
 
-                <div className='footer-bottom'>
-                    <span>© 2026 MOH Enterprises</span>
-                    <span>Powering a greener future</span>
-                </div>
-            </footer>
+            <Footer />
         </>
     )
 }
