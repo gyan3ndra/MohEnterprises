@@ -11,6 +11,10 @@ const schema = mongoose.Schema({
         type:String,
         trim:true
     },
+    productInfo:{
+        type:String,
+        trim:true
+    },
     imageUrl:{
         type:String,
         trim:true
