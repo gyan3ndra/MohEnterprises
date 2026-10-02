@@ -13,6 +13,7 @@ import Industrial from '../assets/IndustrialSolarProject.png'
 import powerimg from '../assets/power.png'
 import solarimg from '../assets/solar.png'
 import wrenchimg from '../assets/wrench.png'
+import { ContactPartition } from './Partition.jsx'
 
 const Home = () => {
     const companyLogo = [s6, s5, s3, s4, s2, s1]
@@ -99,7 +100,7 @@ const Home = () => {
                             <button className='animate-pop-in lg:p-5 p-3 h-10 justify-center items-center gap-5 lg:gap-9 flex lg:h-15 rounded-md bg-[#F87061] text-white font-bold text-[10px] sm:text-sm md:text-md cursor-pointer transition-all duration-800 hover:bg-[#ba4b3e]'>Lets Start A Talk! <img className='w-7 h-7 lg:w-10 lg:h-10 invert' src={msgimg} /></button>
                         </span>
                         <h1 className='text-[#2F2F2F] text-[clamp(3rem,9vw,8rem)] leading-[0.98] font-extrabold'>ENTERPRISES</h1>
-                        <p className='mx-auto mt-4 max-w-2xl text-base lg:text-lg text-slate-500 font-light'>Smart solar solutions designed to maximize your energy independence and lifetime savings.</p>
+                        <p className='mx-auto mt-4 max-w-2xl text-sm lg:text-lg text-slate-500 font-light'>Smart solar solutions designed to maximize your energy independence and lifetime savings.</p>
                     </div>
                 </section>
                 <section className='grid grid-cols-1 md:grid-cols-3 p-4 gap-3 md:gap-5'>
@@ -127,7 +128,7 @@ const Home = () => {
                 }
             </section>
 
-            <section className='bg-white py-16 px-4 lg:px-10'>
+            <section className='py-16 px-4 lg:px-10'>
                 <div className='max-w-6xl mx-auto'>
                     <div className='mb-12 text-center'>
                         <p className='text-[#F87061] font-semibold uppercase tracking-[0.2em] text-sm'>Our Works</p>
@@ -146,7 +147,7 @@ const Home = () => {
                                     <p>{work.description}</p>
                                     <ul>
                                         {work.details.map((detail, detailIndex) => (
-                                            <li key={detailIndex}>{detail}</li>
+                                            <li key={detailIndex}>→ {detail}</li>
                                         ))}
                                     </ul>
                                 </div>
@@ -155,7 +156,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section id='OFFERS' className=' p-3'>
+            {/* <section id='OFFERS' className=' p-3'>
                 <div className='grid grid-cols-1 md:grid-cols-3 w-full p-3 lg:w-3/4 mx-auto h-fit gap-10'>
                     {
                         offercards.map((e) => {
@@ -173,8 +174,8 @@ const Home = () => {
                         })
                     }
                 </div>
-            </section>
-
+            </section> */}
+            <ContactPartition/>
             <Footer />
         </>
     )

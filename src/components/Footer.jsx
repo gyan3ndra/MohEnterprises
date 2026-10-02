@@ -2,7 +2,7 @@ const Footer = () => (
   <footer className='site-footer'>
     <div className='footer-inner'>
       <div className='footer-brand'>
-        <div className='brand-mark'>MOH CHAMAR</div>
+        {/* <div className='brand-mark'>MOH CHAMAR</div> */}
         <h3>MOH ENTERPRISES</h3>
         <p>
           Delivering smart, sustainable solar power systems for homes, businesses,

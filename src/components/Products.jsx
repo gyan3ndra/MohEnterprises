@@ -4,6 +4,7 @@ import panelimg from '../assets/products/panel.jpg'
 import wireimg from '../assets/products/wire.jpg'
 import inverterimg from '../assets/products/inverter.jpg'
 import structureimg from '../assets/products/structure.jpg'
+import phoneimg from '../assets/phone.png'
 import distributionboximg from '../assets/products/otherproducts/distributionbox.jpg'
 import batteryimg from '../assets/products/otherproducts/battery.jpg'
 import accessoriesimg from '../assets/products/otherproducts/accessories.jpg'
@@ -11,49 +12,62 @@ import earthingkitimg from '../assets/products/otherproducts/earthingkit.jpg'
 import pantyimg from '../assets/products/otherproducts/panty.jpg'
 import { InverterContent, StructureContent, PanelContent, WireContent } from './ProductContent'
 import Footer from './Footer'
+import { ContactPartition } from './Partition'
 
 const Products = () => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0)
+  const [products, setproducts] = useState([])
   const otherproducts = [batteryimg, accessoriesimg, distributionboximg, earthingkitimg]
-  const boxes = [
-    { id: 1, color: "bg-red-400", text: "Box 1", img: pantyimg },
-    { id: 2, color: "bg-blue-400", text: "Box 2" },
-    { id: 3, color: "bg-green-400", text: "Box 3" },
-    { id: 4, color: "bg-purple-400", text: "Box 4" },
-  ];
+
   useEffect(() => {
+    const fetchproducts = async () => {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/products`)
+      const data = await res.json()
+      if (res.ok) {
+        setproducts(data)
+      }
+      // console.log(data)
+    }
+    fetchproducts()
+  }, [])
+  const sliderProducts = products.filter(
+    (e) => e.productType !== "structure"
+  )
+  useEffect(() => {
+    if (sliderProducts.length === 0) return;
+
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % boxes.length);
+      setCurrent((prev) => (prev + 1) % sliderProducts.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [boxes.length]);
+  }, [sliderProducts.length])
 
   const productcards = [
     {
       img: panelimg,
-      color: 'bg-red-300',
+      color: 'bg-red-200',
       description: 'High-efficiency solar panels with durable construction, excellent sunlight absorption and reliable long-term performance',
       content: <PanelContent />,
-      type: 'PANELS',
+      type: 'PANEL',
     },
     {
       img: wireimg,
-      color: 'bg-green-300 place-self-end ',
+      color: 'bg-green-200 place-self-end ',
       description: 'Premium copper solar wires with strong insulation, UV resistance and reliable outdoor performance',
       content: <WireContent />,
-      type: 'WIRES',
+      type: 'WIRE',
     },
     {
       img: structureimg,
-      color: 'bg-blue-300',
+      color: 'bg-blue-200',
       description: 'Heavy-duty galvanized steel structure with corrosion resistance, strong support and long-lasting durability',
       content: <StructureContent />,
-      type: 'STRUCTURES',
+      type: 'STRUCTURE',
     },
     {
       img: inverterimg,
-      color: 'bg-yellow-300 place-self-end ',
+      color: 'bg-yellow-200 place-self-end ',
       description: 'Microtech grid tied D11 inverters LED display bluetooth connectivity',
       content: <InverterContent />,
       type: 'INVERTER',
@@ -69,31 +83,31 @@ const Products = () => {
           <div className='grid grid-cols-2 gap-2 '>
             {/* Column 1 */}
             <div className="flex flex-col gap-2">
-              <div className=" bg-white h-32 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 overflow-hidden group"><img className='w-full h-full object-contain rounded-2xl scale-140 group-hover:scale-160 transition-all duration-300' src={otherproducts[0]} alt="" /></div>
+              <a href={`/preview?type=BATTERY`} className=" bg-white h-32 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 overflow-hidden group"><img className='w-full h-full object-contain rounded-2xl group-hover:scale-120 transition-all duration-300' src={otherproducts[0]} alt="" /></a>
 
-              <div className="bg-white h-52 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 overflow-hidden group"><img className='w-full h-full object-contain rounded-2xl group-hover:scale-120 transition-all duration-300' src={otherproducts[1]} alt="" /></div>
+              <a href={`/preview?type=STRUCTURE`} className="bg-white h-52 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 overflow-hidden group"><img className='w-full h-full object-contain rounded-2xl group-hover:scale-120 transition-all duration-300' src={otherproducts[1]} alt="" /></a>
             </div>
 
             {/* Column 2 */}
             <div className="flex flex-col gap-2">
-              <div className="bg-white h-52 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 overflow-hidden group"><img className='w-full h-full object-contain rounded-2xl group-hover:scale-120 transition-all duration-300' src={otherproducts[2]} alt="" /></div>
+              <a href={`/preview?type=DISTRIBUTION-BOX`} className="bg-white h-52 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 overflow-hidden group"><img className='w-full h-full object-contain rounded-2xl group-hover:scale-120 transition-all duration-300' src={otherproducts[2]} alt="" /></a>
 
-              <div className="bg-white h-32 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 group overflow-hidden"><img className='w-full h-full object-contain rounded-2xl scale-140 group-hover:scale-160 transition-all duration-300' src={otherproducts[3]} alt="" /></div>
+              <a href={`/preview?type=EARTHING-KIT`} className="bg-white h-32 rounded-xl hover:scale-101 cursor-pointer transition-all duration-300 group overflow-hidden"><img className='w-full h-full object-contain rounded-2xl scale-140 group-hover:scale-160 transition-all duration-300' src={otherproducts[3]} alt="" /></a>
             </div>
           </div>
           <div className='w-full bg-white rounded-full h-full flex gap-2 sm:gap-3 items-center p-2'>
-            <button  onClick={() => document.getElementById("mainproducts")?.scrollIntoView({behavior: "smooth"})
-  } className='bg-slate-950 overflow-hidden p-2 w-35 sm:w-40 rounded-2xl text-sm text-white cursor-pointer group relative'>
-              <span className="relative z-5 transition-colors duration-500 group-hover:text-white font-light">
+            <button onClick={() => document.getElementById("mainproducts")?.scrollIntoView({ behavior: "smooth" })
+            } className='bg-slate-900 overflow-hidden p-2 w-35 font-semibold sm:w-40 rounded-2xl text-sm text-white cursor-pointer group relative'>
+              <span className="relative z-5 transition-colors duration-500 group-hover:text-white">
                 More Products
               </span>
-              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-violet-500 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
+              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-violet-900 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
             </button>
-            <button className='relative w-25 sm:w-30 rounded-2xl text-sm font-light h-full bg-violet-600 cursor-pointer text-white group overflow-hidden'>
+            <button className='relative w-25 sm:w-30 font-semibold rounded-2xl text-sm h-full bg-gray-900 cursor-pointer text-white group overflow-hidden'>
               <span className='relative z-5'>
                 Offers
               </span>
-              <span className='absolute bg-slate-950 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
+              <span className='absolute bg-violet-900 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
 
             </button>
           </div>
@@ -108,9 +122,9 @@ const Products = () => {
                 transform: `translateX(-${current * 100}%)`,
               }}
             >
-              {boxes.map((box) => (
-                <div key={box.id} className={`min-w-full h-80 ${box.color} flex items-center justify-center text-3xl font-bold`}>
-                  <img className='w-full h-full  object-cover' src={box.img} alt="" />
+              {products.map((e) => (
+                e.productType != "structure" && <div key={e._id} className={`min-w-full h-80 bg-white flex items-center justify-center text-3xl font-bold`}>
+                  <img className='w-full h-full object-contain' src={e.imageUrl} alt="" />
                 </div>
               ))}
             </div>
@@ -119,7 +133,7 @@ const Products = () => {
         </div>
       </section>
       <h1 id='mainproducts' className='font-bold text-4xl text-center text-gray-900'>Available Products</h1>
-      <p className='text-lg font-light text-center text-gray-800'>Power Your Future with Solar</p>
+      <p className='text-lg font-extralight text-center text-gray-800'>Power Your Future with Solar</p>
       <section className='m-2 md:m-5 min-h-200 sm:min-h-130 grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
         {
           productcards.map((e) => {
@@ -146,6 +160,53 @@ const Products = () => {
         }
 
       </section>
+      <section className='p-2 w-full mx-auto grid grid-cols-2 md:w-fit mb-10 mt-10 md:grid-cols-4 lg:grid-cols-5 gap-3'>
+        {
+          products.map((e) => {
+            return (
+              <div
+                key={e._id}
+                className='w-full md:w-45 h:60 sm:h-55 bg-slate-900 p-2 shadow-md rounded-md hover:scale-101 transition-all duration-300 cursor-pointer'
+              >
+                <div className='w-full rounded-md h-3/4 bg-gray-100'>
+                  <img
+                    className='w-full h-full object-contain'
+                    src={e.imageUrl}
+                    alt=""
+                  />
+                </div>
+
+                <div className='flex-1 p-1 min-w-0'>
+                  <h3 className='text-[12px] font-bold mt-1 font-mono text-slate-200 bg-slate-700 rounded-md w-fit pr-2 pl-2'>
+                    {e.productType}
+                  </h3>
+
+                  <p className='text-[10px] mt-1 pl-1 font-light text-slate-200 truncate'>
+                    {e.productInfo}
+                  </p>
+                </div>
+              </div>
+            )
+          })
+        }
+      </section>
+      {/* <section className='p-2 w-full mx-auto grid grid-cols-2 md:w-fit mb-10 mt-10 md:grid-cols-4 lg:grid-cols-6 gap-3'>
+        {
+          products.map((e) => {
+            return (
+              // ${e.productType === "inverter" ? 'bg-yellow-300' : e.productType === "panel" ? 'bg-red-300' : e.productType === "wire" ? 'bg-green-300' : 'bg-blue-300'}
+              <div key={e._id} className={`w-45 h-55 } p-2 bg-slate-900 shadow-md rounded-md hover:scale-101 transition-all duration-300 cursor-pointer`}>
+                <div className='w-full h-3/4 bg-gray-100 rounded-md'><img className='w-full h-full object-contain' src={e.imageUrl} alt="" /></div>
+                <div className='flex-1 p-1'>
+                  <h3 className='text-[12px] font-bold mt-1 font-mono text-slate-200 bg-slate-700 w-fit pr-1 pl-1 rounded-md'>{e.productType}</h3>
+                  <p className='text-[10px] font-light text-slate-200'>{e.productInfo}</p>
+                </div>
+              </div>
+            )
+          })
+        }
+      </section> */}
+      <ContactPartition />
       <Footer />
     </section >
   )

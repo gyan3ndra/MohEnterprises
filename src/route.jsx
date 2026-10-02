@@ -5,6 +5,7 @@ import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import Products from "./components/Products.jsx";
 import Preview from "./components/Preview.jsx";
+import Admin from "./components/Admin.jsx";
 
 const router = createBrowserRouter([
     {
@@ -30,9 +31,13 @@ const router = createBrowserRouter([
             {
                 path: 'preview',
                 element: <Preview />
-            }
+            },
 
-        ]
+        ],
+    },
+    {
+        path: '/admin',
+        element: <Admin />
     },
 ])
 export default router
