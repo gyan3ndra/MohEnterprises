@@ -3,6 +3,7 @@ import productdb from '../schema/productSchema.js'
 import cloudinary from '../config/cloudinary.js'
 import upload from '../middleware/upload.js'
 import fs from 'fs/promises'
+import { redirect } from 'react-router-dom'
 
 const router = express.Router()
 
@@ -66,6 +67,14 @@ router.put('/update', upload.single('productImage'), async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: 'something went wrong' })
     }
+})
+
+router.post('/protected',(req,res)=>{
+    const {password} = req.body
+    if(password===process.env.ADMIN_PASSWORD){
+        return res.status(200).json({redirect:true})
+    }
+    return res.status(401).json({redirect:false})
 })
 
 export default router
