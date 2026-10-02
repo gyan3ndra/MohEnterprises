@@ -6,6 +6,7 @@ import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
 import products from './routes/products.js'
+import admin from './routes/admin.js'
 
 try {
     await mongoose.connect(process.env.MONGO_URL)
@@ -20,6 +21,7 @@ app.use(cors({
 }))
 app.use(express.json())
 app.use('/products',products)
+app.use('/admin',admin)
 
 app.get('/api',(req,res)=>{
     res.status(200).json({message:'hell'})
