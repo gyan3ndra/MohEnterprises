@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { whatsappUrl } from './Partition'
 
 const Contact = () => {
   const contactdetails = [
@@ -35,21 +36,21 @@ const Contact = () => {
       <section className='max-w-7xl mx-auto p-0 sm:p-4 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
         <div>
           <h1 className='text-4xl sm:text-5xl md:text-6xl leading-tight font-bold'>Lets Start A Converstaion!</h1>
-          <p className='text-md md:text-lg font-light'>Have questions about solar panels, pricing, or installation? Give us a call and our team will help you out.</p>
+          <p className='text-md md:text-lg text-slate-800 font-light'>Have questions about solar panels, pricing, or installation? Give us a call and our team will help you out.</p>
           <div className='w-full p-1 md:p-3 mt-5 grid grid-cols-2 gap-4'>
             {
               contactdetails.map((e) => {
                 return (
                   <div key={e.title} className='min-w-0'>
-                    <h3 className='font-bold text-slate-900 text-lg md:text-2xl'>{e.title}</h3>
-                    <p className='wrap-break-words font-light text-sm md:text-md text-slate-600'>{e.content}</p>
+                    <h3 className='font-bold text-slate-100 text-md bg-slate-800 pr-3 pl-3 w-fit rounded-md'>{e.title}</h3>
+                    <p className='wrap-break-words font-light text-sm md:text-md text-slate-600 pl-1 wrap-break-word'>{e.content}</p>
                   </div>
                 )
               })
             }
           </div>
-          <p className='font-light text-md md:text-lg mt-3'>Tell us about your home or business and get a personalized solar solution based on your energy needs.</p>
-          <a className='text-lg md:text-lg font-light text-blue-700 hover:text-blue-900' href="">Get a Solar Estimate</a>
+          <p className='font-light text-md md:text-lg mt-3 mb-1'>Tell us about your home or business and get a personalized solar solution based on your energy needs.</p>
+          <a href={whatsappUrl} className='text-lg md:text-lg font-semibold text-white hover:bg-orange-800 transition-all duration-300 bg-orange-700 p-1 pr-4 pl-4 rounded-md'>Get a Solar Estimate</a>
         </div>
         <div className='flex justify-center w-full p-0 sm:p-2'>
           <form className='w-full lg:w-[80%] max-w-xl bg-white p-3 sm:p-5 gap-3 flex flex-col shadow-lg rounded-2xl'>

@@ -18,3 +18,7 @@ export const ContactPartition = ()=>{
       </section>
     )
 }
+const whatsappNumber = import.meta.env.VITE_PHONE;
+const defaultMessage = encodeURIComponent(`Hello, I’m interested in solar panels for my home/business. I’d like to know more about the available solar systems, pricing, and installation. Please share the details.
+`)
+export const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;

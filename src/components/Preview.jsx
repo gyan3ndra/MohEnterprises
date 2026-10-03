@@ -5,13 +5,10 @@ import Footer from './Footer'
 import whatsappimg from '../assets/whatsapp.png'
 import phoneimg from '../assets/phone.png'
 import { useSearchParams } from 'react-router-dom'
-import { ContactPartition } from './Partition'
+import { ContactPartition,whatsappUrl } from './Partition'
 
 const Preview = () => {
-  const whatsappNumber = import.meta.env.VITE_PHONE;
   
-  const defaultMessage = encodeURIComponent("Hi!");
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
   const [params] = useSearchParams()
   const productType = params.get('type')
   const [products, setproducts] = useState([])
@@ -100,16 +97,9 @@ const Preview = () => {
         {
           products.map((e) => {
             return (
-              <div
-                key={e._id}
-                className='w-full md:w-45 h:60 sm:h-55 bg-white p-2 shadow-md rounded-md hover:scale-101 transition-all duration-300 cursor-pointer'
-              >
+              <div key={e._id} className='w-full md:w-45 h:60 sm:h-55 bg-white p-2 shadow-md rounded-md hover:scale-101 transition-all duration-300 cursor-pointer' >
                 <div className='w-full rounded-md h-3/4 bg-white'>
-                  <img
-                    className='w-full h-full object-contain'
-                    src={e.imageUrl}
-                    alt=""
-                  />
+                  <img className='w-full h-full object-contain' src={e.imageUrl} alt="" />
                 </div>
 
                 <div className='flex-1 p-1 min-w-0'>
