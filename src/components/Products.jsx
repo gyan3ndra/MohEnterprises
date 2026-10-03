@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import panelimg from '../assets/products/panel.jpg'
 import wireimg from '../assets/products/wire.jpg'
+import msgimg from '../assets/msg.png'
 import inverterimg from '../assets/products/inverter.jpg'
 import structureimg from '../assets/products/structure.jpg'
 import phoneimg from '../assets/phone.png'
@@ -13,7 +14,7 @@ import packagebannerimg from '../assets/packagebanner.jpg'
 import pantyimg from '../assets/products/otherproducts/panty.jpg'
 import { InverterContent, StructureContent, PanelContent, WireContent } from './ProductContent'
 import Footer from './Footer'
-import { ContactPartition } from './Partition'
+import { ContactPartition, ProductPartition, whatsappUrl } from './Partition'
 import Package from './Package'
 
 const Products = () => {
@@ -135,9 +136,20 @@ const Products = () => {
         </div>
       </section>
       <Package />
+      <ProductPartition />
       <h1 id='mainproducts' className='font-bold text-4xl text-center text-gray-900 mt-5'>Available Products</h1>
       <p className='text-lg font-extralight text-center text-gray-800'>Power Your Future with Solar</p>
-      <section className='m-2 md:m-5 min-h-200 sm:min-h-130 grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
+      <div className='p-4 flex gap-2'>
+        <a className="relative border-2 rounded-md font-semibold overflow-hidden group px-5 py-2 hover:scale-101 transition-all duration-300" href={`${whatsappUrl}`}>
+          <span className="relative z-10 text-slate-800 font-semibold flex gap-5 items-center text-md">
+            Get a Quote on WhatsApp
+            <img className='w-8 h-8' src={msgimg} alt="" />
+          </span>
+
+          <span className="absolute z-0 top-0 left-0 w-0 h-full bg-gray-100 group-hover:w-full transition-all duration-500" />
+        </a>
+      </div>
+      <section className='m-2 md:m-5 h-fit grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
         {
           productcards.map((e) => {
             return (
@@ -163,7 +175,8 @@ const Products = () => {
         }
 
       </section>
-      <section className='lg:flex lg:gap-5 lg:items-center lg:p-4'>
+      <div className='w-5/6 h-px bg-gray-200 mt-10 mx-auto'></div>
+      <section id='DETAILEDPRODUCTVIEW' className='lg:flex lg:gap-5 lg:items-center lg:p-4'>
         <div className='flex-1 relative bg-slate-900 border border-slate-700 shadow-lg group lg:flex hidden cursor-pointer h-120 rounded-2xl'>
           <img className='w-full h-full object-contain transition-all duration-300' src={packagebannerimg} alt="" />
           {/* <button className='absolute left-2 hidden  group-hover:flex hover:scale-102 bottom-2 pl-5 pr-5 p-3 text-sm bg-slate-900 text-white rounded-2xl font-mono cursor-pointer transition-all duration-300 hover:bg-gray-800'>VIEW PACKAGES</button> */}
@@ -173,7 +186,7 @@ const Products = () => {
             products.map((e) => {
               return (
                 <div key={e._id} className='w-full md:w-45 h:60 sm:h-55 bg-slate-900 p-2 shadow-md rounded-md hover:scale-101 transition-all duration-300 cursor-pointer'>
-                  <div className='w-full rounded-md h-3/4 bg-gray-100'>
+                  <div className='w-full rounded-md h-3/4 bg-gray-300'>
                     <img className='w-full h-full object-contain' src={e.imageUrl} alt="" />
                   </div>
 

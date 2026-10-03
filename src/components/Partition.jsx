@@ -18,6 +18,25 @@ export const ContactPartition = ()=>{
       </section>
     )
 }
+export const ProductPartition = ()=>{
+  const category = ['Structures','Panels','Inverters','Battery','Earthing Kit','Distribution Boxes','Wires']
+    return(
+        <section className="p-5 flex flex-col items-center gap-5 mt-10 mb-10">
+        <h1 className="text-3xl md:text-4xl font-light text-center">
+         What Products Do We Offer?
+        </h1>
+        <div onClick={()=>{document.getElementById('DETAILEDPRODUCTVIEW').scrollIntoView({behavior:'smooth'})}} className='flex gap-3 flex-wrap max-w-150 p-3 items-center justify-center'>
+          {
+            category.map((e)=>{
+              return(
+                <div key={e} className='p-1 pl-6 pr-6 border-2 rounded-md text-md md:text-lg text-slate-700'>{e}</div>
+              )
+            })
+          }
+        </div>
+      </section>
+    )
+}
 const whatsappNumber = import.meta.env.VITE_PHONE;
 const defaultMessage = encodeURIComponent(`Hello, I’m interested in solar panels for my home/business. I’d like to know more about the available solar systems, pricing, and installation. Please share the details.
 `)

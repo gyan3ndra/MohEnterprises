@@ -80,12 +80,12 @@ const Preview = () => {
               </span>
               <span className='absolute top-0 w-0 left-0 bg-gray-200 h-full group-hover:w-full transition-all duration-500'></span>
             </a>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='relative w-1/2 bg-green-300 border border-green-300 text-white font-semibold overflow-hidden group p-2 text-center'>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='relative w-1/2 bg-green-400 border border-green-400 text-white font-semibold overflow-hidden group p-2 text-center'>
               <span className='z-5 text-white font-bold relative flex justify-center items-center gap-1 sm:gap-2 text-md'>
                 <img className='w-8 h-8 sm:w-10 sm:h-10' src={whatsappimg} />
                 WHATSAPP
               </span>
-              <span className='absolute top-0 w-0 left-0 bg-green-400 h-full group-hover:w-full transition-all duration-500'></span>
+              <span className='absolute top-0 w-0 left-0 bg-green-500 h-full group-hover:w-full transition-all duration-500'></span>
             </a>
           </div>
         </div>
