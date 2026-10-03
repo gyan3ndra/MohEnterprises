@@ -14,6 +14,7 @@ import powerimg from '../assets/power.png'
 import solarimg from '../assets/solar.png'
 import wrenchimg from '../assets/wrench.png'
 import { ContactPartition, whatsappUrl } from './Partition.jsx'
+import Package from './Package.jsx'
 
 const Home = () => {
     const companyLogo = [s6, s5, s3, s4, s2, s1]
@@ -175,6 +176,7 @@ const Home = () => {
                     }
                 </div>
             </section> */}
+            <Package/>
             <ContactPartition/>
             <Footer />
         </>

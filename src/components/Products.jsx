@@ -7,13 +7,14 @@ import structureimg from '../assets/products/structure.jpg'
 import phoneimg from '../assets/phone.png'
 import distributionboximg from '../assets/products/otherproducts/distributionbox.jpg'
 import batteryimg from '../assets/products/otherproducts/battery.jpg'
-import accessoriesimg from '../assets/products/otherproducts/accessories.jpg'
+import accessoriesimg from '../assets/products/structure.jpg'
 import earthingkitimg from '../assets/products/otherproducts/earthingkit.jpg'
 import packagebannerimg from '../assets/packagebanner.jpg'
 import pantyimg from '../assets/products/otherproducts/panty.jpg'
 import { InverterContent, StructureContent, PanelContent, WireContent } from './ProductContent'
 import Footer from './Footer'
 import { ContactPartition } from './Partition'
+import Package from './Package'
 
 const Products = () => {
   const [current, setCurrent] = useState(0)
@@ -47,28 +48,28 @@ const Products = () => {
   const productcards = [
     {
       img: panelimg,
-      color: 'bg-red-200',
+      color: 'bg-white',
       description: 'High-efficiency solar panels with durable construction, excellent sunlight absorption and reliable long-term performance',
       content: <PanelContent />,
       type: 'PANEL',
     },
     {
       img: wireimg,
-      color: 'bg-green-200 place-self-end ',
+      color: 'bg-white place-self-end ',
       description: 'Premium copper solar wires with strong insulation, UV resistance and reliable outdoor performance',
       content: <WireContent />,
       type: 'WIRE',
     },
     {
       img: structureimg,
-      color: 'bg-blue-200',
+      color: 'bg-white',
       description: 'Heavy-duty galvanized steel structure with corrosion resistance, strong support and long-lasting durability',
       content: <StructureContent />,
       type: 'STRUCTURE',
     },
     {
       img: inverterimg,
-      color: 'bg-yellow-200 place-self-end ',
+      color: 'bg-white place-self-end ',
       description: 'Microtech grid tied D11 inverters LED display bluetooth connectivity',
       content: <InverterContent />,
       type: 'INVERTER',
@@ -79,7 +80,7 @@ const Products = () => {
   return (
     <section className='min-h-screen bg-white md:pt-15 pt-20'>
       <section className='mt-0 m-3 md:m-10 rounded-2xl bg-slate-900 shadow-md min-h-110 lg:p-3 grid grid-cols-1 lg:grid-cols-2'>
-        <div className="h-full p-2 flex flex-col justify-between gap-3 order-2 sm:order-1">
+        <div className="h-full p-2 flex flex-col justify-between gap-3 order-2 lg:order-1">
 
           <div className='grid grid-cols-2 gap-2 '>
             {/* Column 1 */}
@@ -102,19 +103,19 @@ const Products = () => {
               <span className="relative z-5 transition-colors duration-500 group-hover:text-white">
                 More Products
               </span>
-              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-violet-900 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
+              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-slate-700 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
             </button>
-            <button className='relative w-25 sm:w-30 font-semibold rounded-2xl text-sm h-full bg-gray-900 cursor-pointer text-white group overflow-hidden'>
+            <button className='relative w-25 sm:w-30 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
               <span className='relative z-5'>
-                Offers
+                Packages
               </span>
-              <span className='absolute bg-violet-900 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
+              <span className='absolute bg-slate-700 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
 
             </button>
           </div>
         </div>
         {/* grid 2 */}
-        <div className='h-full flex justify-center items-center order-1 sm:order-2'>
+        <div className='h-full flex justify-center items-center order-1 lg:order-2'>
           <div className="w-full lg:w-3/4 overflow-hidden rounded-md">
 
             <div
@@ -133,13 +134,14 @@ const Products = () => {
           </div>
         </div>
       </section>
-      <h1 id='mainproducts' className='font-bold text-4xl text-center text-gray-900'>Available Products</h1>
+      <Package />
+      <h1 id='mainproducts' className='font-bold text-4xl text-center text-gray-900 mt-5'>Available Products</h1>
       <p className='text-lg font-extralight text-center text-gray-800'>Power Your Future with Solar</p>
       <section className='m-2 md:m-5 min-h-200 sm:min-h-130 grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
         {
           productcards.map((e) => {
             return (
-              <div key={e.type} className={`h-90 sm:h-100 lg:h-120 w-full flex flex-col gap-2 ${e.color} p-2`}>
+              <div key={e.type} className={`h-90 shadow-md shadow-black/20 sm:h-100 lg:h-120 w-full flex flex-col gap-2 ${e.color} p-2`}>
                 <div className='w-full shrink-0 bg-white h-1/2'><img src={e.img} className='w-full h-full object-contain' /></div>
                 <div className='flex-1 flex flex-col p-1 justify-between'>
                   <h3 className='text-[11px] md:text-sm'>{e.type}</h3>

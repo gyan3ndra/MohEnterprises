@@ -49,8 +49,8 @@ const Contact = () => {
               })
             }
           </div>
-          <p className='font-light text-md md:text-lg mt-3 mb-1'>Tell us about your home or business and get a personalized solar solution based on your energy needs.</p>
-          <a href={whatsappUrl} className='text-lg md:text-lg font-semibold text-white hover:bg-orange-800 transition-all duration-300 bg-orange-700 p-1 pr-4 pl-4 rounded-md'>Get a Solar Estimate</a>
+          <p className='font-light text-md md:text-lg mt-3 mb-2'>Tell us about your home or business and get a personalized solar solution based on your energy needs.</p>
+          <a href={whatsappUrl} className='text-[14px] font-semibold bg-[#F87061] text-white hover:bg-orange-800 transition-all duration-300 p-2 pr-4 pl-4 rounded-md'>Get a Solar Estimate</a>
         </div>
         <div className='flex justify-center w-full p-0 sm:p-2'>
           <form className='w-full lg:w-[80%] max-w-xl bg-white p-3 sm:p-5 gap-3 flex flex-col shadow-lg rounded-2xl'>
