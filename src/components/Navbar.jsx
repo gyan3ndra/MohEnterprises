@@ -19,8 +19,8 @@ const Navbar = () => {
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
-          <li><Link to='/Products'>Products</Link></li>
-          <li>Services</li>
+          <li><Link to='/products'>Products</Link></li>
+          <li><Link to='/services'>Services</Link></li>
           {/* <li><button type='button' onClick={() => onNavigate('/contact')}>Contact</button></li> */}
         </ul>
         <div onClick={()=>{setMenuOpen(!menuOpen)}} className={`flex md:hidden w-10 h-10 ${menuOpen?'bg-white':'bg-white'} rounded-full cursor-pointer`}>
@@ -30,8 +30,8 @@ const Navbar = () => {
               <li><Link className="block p-4" to='/'>Home</Link></li>
               <li><Link className="block p-4" to='/about'>About</Link></li>
               <li><Link className="block p-4" to='/contact'>Contact</Link></li>
-              <li><Link className="block p-4" to='/Products'>Products</Link></li>
-              <li><Link className="block p-4" to='/Services'>Services</Link></li>
+              <li><Link className="block p-4" to='/products'>Products</Link></li>
+              <li><Link className="block p-4" to='/services'>Services</Link></li>
             </ul>
           }
         </div>

@@ -13,7 +13,7 @@ import Industrial from '../assets/IndustrialSolarProject.png'
 import powerimg from '../assets/power.png'
 import solarimg from '../assets/solar.png'
 import wrenchimg from '../assets/wrench.png'
-import { ContactPartition } from './Partition.jsx'
+import { ContactPartition, whatsappUrl } from './Partition.jsx'
 
 const Home = () => {
     const companyLogo = [s6, s5, s3, s4, s2, s1]
@@ -97,7 +97,7 @@ const Home = () => {
                     <div className='w-full max-w-6xl p-3 text-center'>
                         <span className='flex gap-4 md:gap-10 justify-center w-full items-center'>
                             <h1 className='text-[#2F2F2F] text-[clamp(3.0rem,10vw,8rem)] leading-none font-extrabold'>MOH</h1>
-                            <button className='animate-pop-in lg:p-5 p-3 h-10 justify-center items-center gap-5 lg:gap-9 flex lg:h-15 rounded-md bg-[#F87061] text-white font-bold text-[10px] sm:text-sm md:text-md cursor-pointer transition-all duration-800 hover:bg-[#ba4b3e]'>Lets Start A Talk! <img className='w-7 h-7 lg:w-10 lg:h-10 invert' src={msgimg} /></button>
+                            <a href={whatsappUrl} className='animate-pop-in lg:p-5 p-3 h-10 justify-center items-center gap-5 lg:gap-9 flex lg:h-15 rounded-md bg-[#F87061] text-white font-bold text-[10px] sm:text-sm md:text-md cursor-pointer transition-all duration-800 hover:bg-[#ba4b3e]'>Lets Start A Talk! <img className='w-7 h-7 lg:w-10 lg:h-10 invert' src={msgimg} /></a>
                         </span>
                         <h1 className='text-[#2F2F2F] text-[clamp(3rem,9vw,8rem)] leading-[0.98] font-extrabold'>ENTERPRISES</h1>
                         <p className='mx-auto mt-4 max-w-2xl text-sm lg:text-lg text-slate-500 font-light'>Smart solar solutions designed to maximize your energy independence and lifetime savings.</p>

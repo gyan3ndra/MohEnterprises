@@ -6,6 +6,8 @@ import Contact from "./components/Contact.jsx";
 import Products from "./components/Products.jsx";
 import Preview from "./components/Preview.jsx";
 import Admin from "./components/Admin.jsx";
+import Protected from "./components/Protected.jsx";
+import Package from "./components/Package.jsx";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
                 element: <Products />,
             },
             {
+                path: 'package',
+                element:<Package/>
+            },
+            {
                 path: 'preview',
                 element: <Preview />
             },
@@ -38,6 +44,10 @@ const router = createBrowserRouter([
     {
         path: '/admin',
         element: <Admin />
+    },
+    {
+        path: '/admin/protected',
+        element: <Protected/>
     },
 ])
 export default router
