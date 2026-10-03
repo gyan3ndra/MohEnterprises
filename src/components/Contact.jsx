@@ -35,15 +35,16 @@ const Contact = () => {
     <section className='pt-20 min-h-screen p-4'>
       <section className='max-w-7xl mx-auto p-0 sm:p-4 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
         <div>
-          <h1 className='text-4xl sm:text-5xl md:text-6xl leading-tight font-bold'>Lets Start A Converstaion!</h1>
-          <p className='text-md md:text-lg text-slate-800 font-light'>Have questions about solar panels, pricing, or installation? Give us a call and our team will help you out.</p>
-          <div className='w-full p-1 md:p-3 mt-5 grid grid-cols-2 gap-4'>
+          <h1 className='text-4xl sm:text-5xl pl-1 md:text-6xl leading-tight font-bold'>Lets Start A Converstaion!</h1>
+          <p className='text-md md:text-lg pl-1 text-slate-800 font-light'>Have questions about solar panels, pricing, or installation? Give us a call and our team will help you out.</p>
+          <div className='w-full p-1 md:p-3 mt-2 grid grid-cols-2 gap-4'>
             {
               contactdetails.map((e) => {
                 return (
-                  <div key={e.title} className='min-w-0'>
-                    <h3 className='font-bold text-slate-100 text-md bg-slate-800 pr-3 pl-3 w-fit rounded-md'>{e.title}</h3>
-                    <p className='wrap-break-words font-light text-sm md:text-md text-slate-600 pl-1 wrap-break-word'>{e.content}</p>
+                  <div key={e.title} className='relative bg-slate-200/50 min-w-0 rounded-b-2xl p-2'>
+                    <div className='absolute top-0 left-0 w-full h-px bg-[#F87061]'></div>
+                    <h3 className='font-bold text-slate-800 text-md pr-3 pl-3 w-fit rounded-md'>⸝⸝ {e.title}</h3>
+                    <p className='wrap-break-words font-light text-[11px]  md:text-sm text-slate-600 pl-2 wrap-break-word'>{e.content}</p>
                   </div>
                 )
               })
@@ -61,7 +62,7 @@ const Contact = () => {
             </span>
             <input onChange={handleChange} name='email' className='w-full h-13 focus:outline-0 border rounded-md p-3' type="text" placeholder='Email​' />
             <textarea onChange={handleChange} name='message' className='w-full min-h-35 focus:outline-0 border p-3' placeholder='How can we help?'></textarea>
-            <button type='submit' className='text-white p-4 w-full hover:bg-black bg-gray-900 cursor-pointer hover:scale-101 transition-all duration-200'>Submit</button>
+            <button type='submit' className='text-white p-4 w-full hover:bg-[#ff513d] bg-[#fc5f4e] rounded-md font-semibold cursor-pointer hover:scale-101 transition-all duration-200'>Submit</button>
           </form>
         </div>
       </section>

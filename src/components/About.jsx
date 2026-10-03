@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from './Footer.jsx'
 import pic1 from '../assets/pic1.jpg'
 import pic2 from '../assets/pic2.jpg'
+import phoneimg from '../assets/phone.png'
 import { ContactPartition } from './Partition.jsx'
 
 const About = () => {
@@ -22,7 +23,17 @@ const About = () => {
             <p>
               MOH Enterprises is a trusted solar solutions distributor providing high-quality solar panels, inverters, mounting systems and complete solar solutions for homes, businesses and industries across India.
             </p>
-            <a href={`tel:${import.meta.env.PHONE}`} className='primary-button'>Get a Free Consultation</a>
+            <div className='flex'>
+              <a className="relative rounded-md font-semibold bg-slate-900 overflow-hidden group px-5 py-3 " href={`tel:${import.meta.env.VITE_PHONE}`}>
+              <span className="relative z-10 text-slate-100 font-bold flex gap-5 items-center text-sm md:text-md">
+                Get a Free Consultation
+                <img className="w-6 h-6 sm:w-8 sm:h-8 invert" src={phoneimg} />
+              </span>
+
+              <span className="absolute z-0 top-0 left-0 w-0 h-full bg-gray-600 group-hover:w-full transition-all duration-500" />
+            </a>
+            </div>
+            {/* <a href={`tel:${import.meta.env.PHONE}`} className='primary-button'>Get a Free Consultation</a> */}
           </div>
 
           <div className='about-visual'>

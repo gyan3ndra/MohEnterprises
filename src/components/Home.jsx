@@ -7,9 +7,9 @@ import s3 from '../assets/logo/s3.png'
 import s4 from '../assets/logo/s4.png'
 import s5 from '../assets/logo/s5.png'
 import s6 from '../assets/logo/s6.png'
-import Reside from '../assets/Residential Solar Installation.png'
-import Commercial from '../assets/CommercialPowerSystem.png'
-import Industrial from '../assets/IndustrialSolarProject.png'
+import Reside from '../assets/ResidentialSolarInstallation.jpg'
+import Commercial from '../assets/CommercialPowerSystem.jpg'
+import Industrial from '../assets/IndustrialSolarProject.jpg'
 import powerimg from '../assets/power.png'
 import solarimg from '../assets/solar.png'
 import wrenchimg from '../assets/wrench.png'
@@ -107,10 +107,11 @@ const Home = () => {
                 <section className='grid grid-cols-1 md:grid-cols-3 p-4 gap-3 md:gap-5'>
                     {card.map((e, index) => {
                         return (
-                            <div key={e.title} className='bg-white rounded-md min-h-28 p-4 flex justify-center items-center gap-5'>
+                            <div key={e.title} className='rounded-b-2xl relative rounded-md min-h-28 p-4 flex justify-center items-center gap-5'>
                                 <img src={e.img} alt="" />
-                                <div>
-                                    <h4 className=' font-extrabold text-lg'>{e.title}</h4>
+                                <div className=''>
+                                    {/* <div className='h-px top-0 left-0 w-full absolute'></div> */}
+                                    <h4 className='font-extrabold text-lg'>{e.title}</h4>
                                     <p className='text-lg font-light '>{e.msg}</p>
                                 </div>
                             </div>
