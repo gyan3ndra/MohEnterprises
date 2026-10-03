@@ -58,7 +58,7 @@ const Package = () => {
         }
     ]
     return (
-        <section className='relative min-h-screen pt-18 bg-gray-800 pb-18'>
+        <section id='PACKAGES' className='relative min-h-screen pt-18 bg-gray-800 pb-18'>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full h-full p-5 *:transition-all *:hover:scale-101 *:duration-200 *:cursor-pointer *:rounded-2xl'>
                 {
                     packages.map((e) => {

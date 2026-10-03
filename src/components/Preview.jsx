@@ -44,7 +44,7 @@ const Preview = () => {
           <div className='flex gap-2 md:gap-5 justify-center w-full'>
             {
               products.map((e) => {
-                return (<div key={e._id} onClick={() => { setpreviewimg(e.imageUrl) }} className={`cursor-pointer rounded-md w-10 h-10 bg-white`}>
+                return (<div key={e._id} onClick={() => { setpreviewimg(e.imageUrl) }} className={`cursor-pointer rounded-md w-10 h-10 bg-white shadow-md shadow-black/20`}>
                   <img className='w-full h-full object-cover rounded-md' src={e.imageUrl} alt="" />
                 </div>)
               })
@@ -52,10 +52,10 @@ const Preview = () => {
           </div>
         </div>
         <div className='h-full bg-slate-50 p-2 sm:p-3 flex flex-col gap-3 scrollbar-thin lg:pl-5'>
-          <div className='h-fit bg-slate-100 rounded-md p-2'>
-            <h3 className='text-2xl sm:text-3xl font-extrabold md:font-bold tracking-tight text-slate-800 '>Find the right {productType.toLocaleLowerCase()} for your solar setup</h3>
-            <p className='font-light text-md mt-1 mb-2'>Explore our available {productType.toLocaleLowerCase()} models and specifications.</p>
-            <button onClick={() => { document.getElementById('TYPES').scrollIntoView({ behavior: 'smooth' }) }} className='font-semibold font-mono bg-slate-900 text-white p-2 cursor-pointer rounded-md'>View {productType.toLocaleLowerCase()} →</button>
+          <div className='h-fit p-2 flex flex-col justify-center items-center'>
+            <h3 className='text-2xl sm:text-3xl tracking-tight text-slate-800 text-center'>Find the right {productType.toLocaleLowerCase()} for your solar setup</h3>
+            <p className='font-extralight text-md mt-1 mb-2 text-center'>Explore our available {productType.toLocaleLowerCase()} models and specifications.</p>
+            <button onClick={() => { document.getElementById('TYPES').scrollIntoView({ behavior: 'smooth' }) }} className='font-semibold w-fit font-mono  text-slate-800 p-2 pr-4 pl-4 cursor-pointer rounded-md border'>View {productType.toLocaleLowerCase()}</button>
           </div>
           {/* info */}
           <div className='mt-1 max-h-55 p-1 md:p-4'>
@@ -63,7 +63,7 @@ const Preview = () => {
               {
                 products.map((e, index) => {
                   return (
-                    <div key={e.productId} className='w-full bg-slate bg-gray-200 text-blue-950 p-3 text-[13px] font-light rounded-3xl flex gap-2 items-center'>
+                    <div key={e.productId} className='w-full bg-slate border text-black p-3 text-[13px] font-light rounded-3xl flex gap-2 items-center'>
                       <div className='h-full w-6 rounded-full bg-gray-300 flex justify-center items-center text-[10px]'>{index + 1}</div>
                       {e.productInfo}
                     </div>
@@ -72,15 +72,15 @@ const Preview = () => {
               }
             </div>
           </div>
-          <div className='flex gap-2 mt-auto justify-between items-center border-t border-b border-gray-200'>
-            <a href={`tel:${import.meta.env.VITE_PHONE}`} className='relative w-1/2 bg-slate-900 text-white font-semibold overflow-hidden group p-2 text-center'>
-              <span className='z-5 text-white font-bold relative flex justify-center items-center gap-1 sm:gap-2 text-md'>
-                <img className='w-8 h-8 sm:w-10 sm:h-10 invert' src={phoneimg} />
+          <div className='flex gap-2 mt-auto justify-between items-center border-gray-200'>
+            <a href={`tel:${import.meta.env.VITE_PHONE}`} className='relative w-1/2 text-slate-900 border font-semibold overflow-hidden group p-2 text-center'>
+              <span className='z-5 font-bold relative flex justify-center items-center gap-1 sm:gap-2 text-md'>
+                <img className='w-8 h-8 sm:w-10 sm:h-10' src={phoneimg} />
                 CALL US
               </span>
-              <span className='absolute top-0 w-0 left-0 bg-gray-800 h-full group-hover:w-full transition-all duration-500'></span>
+              <span className='absolute top-0 w-0 left-0 bg-gray-200 h-full group-hover:w-full transition-all duration-500'></span>
             </a>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='relative w-1/2 bg-green-300 text-white font-semibold overflow-hidden group p-2 text-center'>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='relative w-1/2 bg-green-300 border border-green-300 text-white font-semibold overflow-hidden group p-2 text-center'>
               <span className='z-5 text-white font-bold relative flex justify-center items-center gap-1 sm:gap-2 text-md'>
                 <img className='w-8 h-8 sm:w-10 sm:h-10' src={whatsappimg} />
                 WHATSAPP

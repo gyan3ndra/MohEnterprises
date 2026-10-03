@@ -119,7 +119,29 @@ const Home = () => {
 
                 </section>
             </section>
-            <section className='company-logos'>
+            <section className="p-5 flex flex-col items-center gap-5 mt-10 mb-10">
+                <h1 className="text-3xl md:text-4xl font-light text-center mb-2">
+                    Explore Our Packages & Available Products
+                </h1>
+                <div className='flex gap-2 *:cursor-pointer'>
+                    <button className="relative border-2 rounded-md font-semibold overflow-hidden group px-10 py-2 " onClick={() => { document.getElementById('PACKAGES').scrollIntoView({ behavior: 'smooth' }) }}>
+                        <span className="relative z-10 text-slate-900 font-bold flex gap-5 items-center text-lg">
+                            Packages
+                        </span>
+
+                        <span className="absolute z-0 top-0 left-0 w-0 h-full bg-gray-200 group-hover:w-full transition-all duration-500" />
+                    </button>
+                    <a className="relative border-2 rounded-md font-semibold bg-slate-900 overflow-hidden group px-10 py-2 " href='/products'>
+                        <span className="relative z-10 text-white font-bold flex gap-5 items-center text-lg">
+                            Products
+                        </span>
+
+                        <span className="absolute z-0 top-0 left-0 w-0 h-full bg-gray-700 group-hover:w-full transition-all duration-500" />
+                    </a>
+                </div>
+            </section>
+            <Package />
+            {/* <section className='company-logos'>
                 {
                     companyLogo.map((e, index) => {
                         return (
@@ -127,7 +149,7 @@ const Home = () => {
                         )
                     })
                 }
-            </section>
+            </section> */}
 
             <section className='py-16 px-4 lg:px-10'>
                 <div className='max-w-6xl mx-auto'>
@@ -148,7 +170,7 @@ const Home = () => {
                                     <p>{work.description}</p>
                                     <ul>
                                         {work.details.map((detail, detailIndex) => (
-                                            <li key={detailIndex}>→ {detail}</li>
+                                            <li key={detailIndex}>✔ {detail}</li>
                                         ))}
                                     </ul>
                                 </div>
@@ -163,21 +185,20 @@ const Home = () => {
                         offercards.map((e) => {
                             return (
                                 <div key={e} className={`relative shadow-lg p-4 ${e.color} h-80 md:h-90`}>
-                                    <div className={`absolute top-0 right-2 h-30 w-12 bg-slate-800`} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%)" }} />
-                                    <h3 className='text-md font-bold mt-5 font-mono '>{e.t1}</h3>
-                                    <h2 className='text-2xl w-3/4 font-semibold font-mono'>{e.t2}</h2>
-                                    <p className='text-md font-light mt-3'>{e.info}</p>
-                                    <h1 className='text-2xl font-bold text-center text-slate-900 mt-5'>{e.t3}</h1>
-                                    <div className='flex w-full justify-center'><a className='text-lg font-bold font-mono text-blue-900 mt-2' href="">{e.t4}</a></div>
-
+                                <div className={`absolute top-0 right-2 h-30 w-12 bg-slate-800`} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%)" }} />
+                                <h3 className='text-md font-bold mt-5 font-mono '>{e.t1}</h3>
+                                <h2 className='text-2xl w-3/4 font-semibold font-mono'>{e.t2}</h2>
+                                <p className='text-md font-light mt-3'>{e.info}</p>
+                                <h1 className='text-2xl font-bold text-center text-slate-900 mt-5'>{e.t3}</h1>
+                                <div className='flex w-full justify-center'><a className='text-lg font-bold font-mono text-blue-900 mt-2' href="">{e.t4}</a></div>
+                                
                                 </div>
-                            )
-                        })
+                                )
+                            })
                     }
-                </div>
-            </section> */}
-            <Package/>
-            <ContactPartition/>
+                    </div>
+                    </section> */}
+            <ContactPartition />
             <Footer />
         </>
     )
