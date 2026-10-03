@@ -8,6 +8,7 @@ import Preview from "./components/Preview.jsx";
 import Admin from "./components/Admin.jsx";
 import Protected from "./components/Protected.jsx";
 import Package from "./components/Package.jsx";
+import Services from "./components/Services.jsx";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: 'preview',
                 element: <Preview />
+            },
+            {
+                path: 'services',
+                element: <Services />
             },
 
         ],
