@@ -16,6 +16,9 @@ import { InverterContent, StructureContent, PanelContent, WireContent } from './
 import Footer from './Footer'
 import { ContactPartition, ProductPartition, whatsappUrl } from './Partition'
 import Package from './Package'
+import ScrollCard from './ScrollCard'
+import { button, p } from 'framer-motion/client'
+import Kits from './Kits'
 
 const Products = () => {
   const [current, setCurrent] = useState(0)
@@ -56,7 +59,7 @@ const Products = () => {
     },
     {
       img: wireimg,
-      color: 'bg-white place-self-end ',
+      color: 'bg-white',
       description: 'Premium copper solar wires with strong insulation, UV resistance and reliable outdoor performance',
       content: <WireContent />,
       type: 'WIRE',
@@ -70,11 +73,29 @@ const Products = () => {
     },
     {
       img: inverterimg,
-      color: 'bg-white place-self-end ',
-      description: 'Microtech grid tied D11 inverters LED display bluetooth connectivity',
+      color: 'bg-white',
+      description: 'Microtek grid tied D11 inverters LED display bluetooth connectivity',
       content: <InverterContent />,
       type: 'INVERTER',
     },
+    {
+      img: batteryimg,
+      color: 'bg-white',
+      description: 'Microtek - protection and safe power distribution for solar systems.',
+      type: 'BATTERY',
+    },
+    {
+      img: distributionboximg,
+      color: 'bg-white',
+      description: 'Havells - Efficient energy storage for reliable solar backup and power supply. [DCDB,ACDB]',
+      type: 'DISTRIBUTION-BOX',
+    },
+    {
+      img: earthingkitimg,
+      color: 'bg-white',
+      description: 'Provides safe grounding and protection for solar systems and electrical equipment.',
+      type: 'EARTHING-KIT',
+    }
   ]
 
 
@@ -106,9 +127,16 @@ const Products = () => {
               </span>
               <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-slate-700 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
             </button>
-            <button onClick={()=> document.getElementById("PACKAGES")?.scrollIntoView({ behavior: "smooth" })} className='relative w-25 sm:w-30 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
+            <button onClick={() => document.getElementById("PACKAGES")?.scrollIntoView({ behavior: "smooth" })} className='relative w-25 sm:w-30 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
               <span className='relative z-5'>
                 Packages
+              </span>
+              <span className='absolute bg-slate-700 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
+
+            </button>
+            <button onClick={() => document.getElementById("KITS")?.scrollIntoView({ behavior: "smooth" })} className='relative w-20 sm:w-25 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
+              <span className='relative z-5'>
+                Kits
               </span>
               <span className='absolute bg-slate-700 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
 
@@ -136,7 +164,10 @@ const Products = () => {
         </div>
       </section>
       <Package />
-      <ProductPartition />
+      <ScrollCard>
+        <ProductPartition />
+
+      </ScrollCard>
       <h1 id='mainproducts' className='font-bold text-4xl text-center text-gray-900 mt-5'>Available Products</h1>
       <p className='text-lg font-extralight text-center text-gray-800'>Power Your Future with Solar</p>
       <div className='p-4 flex gap-2'>
@@ -149,78 +180,37 @@ const Products = () => {
           <span className="absolute z-0 top-0 left-0 w-0 h-full bg-gray-100 group-hover:w-full transition-all duration-500" />
         </a>
       </div>
-      <section className='m-2 md:m-5 h-fit grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
-        {
-          productcards.map((e) => {
-            return (
-              <div key={e.type} className={`h-90 shadow-md shadow-black/20 sm:h-100 lg:h-120 w-full flex flex-col gap-2 ${e.color} p-2`}>
-                <div className='w-full shrink-0 bg-white h-1/2'><img src={e.img} className='w-full h-full object-contain' /></div>
-                <div className='flex-1 flex flex-col p-1 justify-between'>
-                  <h3 className='text-[11px] md:text-sm'>{e.type}</h3>
-                  <p className='text-gray-600 text-[7px] font-light md:text-sm'>{e.description}</p>
-                  {e.content}
-                  <div className='flex justify-end'>
-                    <a href={`/preview?type=${e.type}`} className='p-2 text-center md:p-3 relative cursor-pointer font-light bg-slate-900 w-1/2 text-sm group'>
-                      <span className="relative z-10 text-white transition-colors duration-500 group-hover:text-black">
-                        Preview
-                      </span>
-
-                      <span className="absolute inset-y-0 left-0 w-0 bg-gray-100 transition-all duration-700 ease-in-out group-hover:w-full"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            )
-          })
-        }
-
-      </section>
-      <div className='w-5/6 h-px bg-gray-200 mt-10 mx-auto'></div>
-      <section id='DETAILEDPRODUCTVIEW' className='lg:flex lg:gap-5 lg:items-center lg:p-4'>
-        <div className='flex-1 relative bg-slate-900 border border-slate-700 shadow-lg group lg:flex hidden cursor-pointer h-120 rounded-2xl'>
-          <img className='w-full h-full object-contain transition-all duration-300' src={packagebannerimg} alt="" />
-          {/* <button className='absolute left-2 hidden  group-hover:flex hover:scale-102 bottom-2 pl-5 pr-5 p-3 text-sm bg-slate-900 text-white rounded-2xl font-mono cursor-pointer transition-all duration-300 hover:bg-gray-800'>VIEW PACKAGES</button> */}
-        </div>
-        <section className='p-2 w-full mx-auto ml-auto grid grid-cols-2 md:w-fit mb-10 mt-10 md:grid-cols-4 lg:h-120 overflow-y-auto gap-3'>
+      <ScrollCard>
+        <section className='m-2 md:m-5 h-fit grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
           {
-            products.map((e) => {
+            productcards.map((e) => {
               return (
-                <div key={e._id} className='w-full md:w-45 h:60 sm:h-55 bg-slate-900 p-2 shadow-md rounded-md hover:scale-101 transition-all duration-300 cursor-pointer'>
-                  <div className='w-full rounded-md h-3/4 bg-gray-300'>
-                    <img className='w-full h-full object-contain' src={e.imageUrl} alt="" />
+                <div key={e.type} className={`h-90 rounded-md shadow-md shadow-black/30 sm:h-90 lg:h-105 w-full flex flex-col gap-2 ${e.color} p-2`}>
+                  <div className='w-full shrink-0 bg-white h-1/2'><img src={e.img} className='w-full h-full object-contain' /></div>
+                  <div className='flex-1 flex flex-col p-1'>
+                    <h3 className='text-[9px] md:text-xs p-1 pl-4 pr-4 w-fit rounded-md border font-semibold text-slate-900'>{e.type}</h3>
+                    <div className='h-px bg-gray-300 w-5/6 mx-auto mt-3 mb-3'></div>
+                    <p className='text-gray-600 text-[9px] font-light md:text-sm'>{e.description}</p>
+                    <div className='flex justify-end'>
+                    </div>
                   </div>
+                  <a href={`/preview?type=${e.type}`} className='p-2 text-center md:p-3 relative cursor-pointer font-light bg-slate-900 w-1/2 text-sm group ml-auto'>
+                    <span className="relative z-10 text-white transition-colors duration-500 group-hover:text-black">
+                      Preview
+                    </span>
 
-                  <div className='flex-1 p-1 min-w-0'>
-                    <h3 className='text-[12px] font-bold mt-1 font-mono text-slate-200 bg-slate-700 rounded-md w-fit pr-2 pl-2'>
-                      {e.productType}
-                    </h3>
-
-                    <p className='text-[10px] mt-1 pl-1 font-light text-slate-200 truncate'>
-                      {e.productInfo}
-                    </p>
-                  </div>
+                    <span className="absolute inset-y-0 left-0 w-0 bg-gray-100 transition-all duration-700 ease-in-out group-hover:w-full"></span>
+                  </a>
                 </div>
               )
             })
           }
+
         </section>
-      </section>
-      {/* <section className='p-2 w-full mx-auto grid grid-cols-2 md:w-fit mb-10 mt-10 md:grid-cols-4 lg:grid-cols-6 gap-3'>
-        {
-          products.map((e) => {
-            return (
-              // ${e.productType === "inverter" ? 'bg-yellow-300' : e.productType === "panel" ? 'bg-red-300' : e.productType === "wire" ? 'bg-green-300' : 'bg-blue-300'}
-              <div key={e._id} className={`w-45 h-55 } p-2 bg-slate-900 shadow-md rounded-md hover:scale-101 transition-all duration-300 cursor-pointer`}>
-                <div className='w-full h-3/4 bg-gray-100 rounded-md'><img className='w-full h-full object-contain' src={e.imageUrl} alt="" /></div>
-                <div className='flex-1 p-1'>
-                  <h3 className='text-[12px] font-bold mt-1 font-mono text-slate-200 bg-slate-700 w-fit pr-1 pl-1 rounded-md'>{e.productType}</h3>
-                  <p className='text-[10px] font-light text-slate-200'>{e.productInfo}</p>
-                </div>
-              </div>
-            )
-          })
-        }
-      </section> */}
+      </ScrollCard>
+      <div className='w-5/6 h-px bg-gray-200 mt-10 mx-auto'></div>
+      <Kits/>
+      <div className='w-5/6 h-px bg-gray-200 mt-10 mx-auto'></div>
       <ContactPartition />
       <Footer />
     </section >

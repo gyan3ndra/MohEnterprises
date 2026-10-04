@@ -32,7 +32,7 @@ const Contact = () => {
     setinput(prev=>({...prev,[e.target.name]:e.target.value}))
   }
   return (
-    <section className='pt-20 min-h-screen p-4'>
+    <section className='pt-20 min-h-screen p-4 bg-white'>
       <section className='max-w-7xl mx-auto p-0 sm:p-4 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
         <div>
           <h1 className='text-4xl sm:text-5xl pl-1 md:text-6xl leading-tight font-bold'>Lets Start A Converstaion!</h1>
@@ -54,7 +54,7 @@ const Contact = () => {
           <a href={whatsappUrl} className='text-[14px] font-semibold bg-[#F87061] text-white hover:bg-orange-800 transition-all duration-300 p-2 pr-4 pl-4 rounded-md'>Get a Solar Estimate</a>
         </div>
         <div className='flex justify-center w-full p-0 sm:p-2'>
-          <form className='w-full lg:w-[80%] max-w-xl bg-white p-3 sm:p-5 gap-3 flex flex-col shadow-lg rounded-2xl'>
+          <form className='w-full lg:w-[80%] max-w-xl bg-white p-3 sm:p-5 gap-3 flex flex-col shadow-lg shadow-slate-900/20 rounded-2xl'>
             <h3 className='text-center font-bold text-3xl mb-3'>Contact Us</h3>
             <span className='grid grid-cols-1 sm:grid-cols-2 gap-3 *:p-3 *:focus:outline-0'>
               <input onChange={handleChange} name='firstname' className='min-w-0 w-full h-13 border rounded-md' type="text" placeholder='First Name​' />

@@ -7,6 +7,7 @@ import s3 from '../assets/logo/s3.png'
 import s4 from '../assets/logo/s4.png'
 import s5 from '../assets/logo/s5.png'
 import s6 from '../assets/logo/s6.png'
+import ScrollCard from './ScrollCard.jsx'
 import Reside from '../assets/ResidentialSolarInstallation.jpg'
 import Commercial from '../assets/CommercialPowerSystem.jpg'
 import Industrial from '../assets/IndustrialSolarProject.jpg'
@@ -15,6 +16,7 @@ import solarimg from '../assets/solar.png'
 import wrenchimg from '../assets/wrench.png'
 import { ContactPartition, whatsappUrl } from './Partition.jsx'
 import Package from './Package.jsx'
+import { useState, useEffect } from 'react'
 
 const Home = () => {
     const companyLogo = [s6, s5, s3, s4, s2, s1]
@@ -91,10 +93,12 @@ const Home = () => {
         },
     ];
 
+
     return (
         <>
             <section className='bg-white min-h-scrren pt-15 pb-6 lg:pt-15'>
-                <section className='flex min-h-[45vh] flex-col items-center justify-center px-4 py-8'>
+                <div id='HOME'></div>
+                <section className='flex z- min-h-[45vh] flex-col items-center justify-center px-4 py-8'>
                     <div className='w-full max-w-6xl p-3 text-center'>
                         <span className='flex gap-4 md:gap-10 justify-center w-full items-center'>
                             <h1 className='text-[#2F2F2F] text-[clamp(3.0rem,10vw,8rem)] leading-none font-extrabold'>MOH</h1>
@@ -161,21 +165,23 @@ const Home = () => {
 
                     <div className='space-y-10'>
                         {works.map((work, index) => (
-                            <article key={index} className={`work-card ${index % 2 === 0 ? 'work-card-left' : 'work-card-right'}`}>
-                                <div className='work-image'>
-                                    <img src={work.image} alt={work.title} />
-                                </div>
-                                <div className='work-content'>
-                                    <span className='work-tag'>{work.type}</span>
-                                    <h3>{work.title}</h3>
-                                    <p>{work.description}</p>
-                                    <ul>
-                                        {work.details.map((detail, detailIndex) => (
-                                            <li key={detailIndex}>✔ {detail}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </article>
+                            <ScrollCard>
+                                <article key={index} className={`work-card hover:scale-101 transition-all duration-300 hover:border border-slate-600/70 ${index % 2 === 0 ? 'work-card-left' : 'work-card-right'}`}>
+                                    <div className='work-image'>
+                                        <img src={work.image} alt={work.title} />
+                                    </div>
+                                    <div className='work-content'>
+                                        <span className='work-tag'>{work.type}</span>
+                                        <h3>{work.title}</h3>
+                                        <p>{work.description}</p>
+                                        <ul>
+                                            {work.details.map((detail, detailIndex) => (
+                                                <li key={detailIndex}>✔ {detail}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </article>
+                            </ScrollCard>
                         ))}
                     </div>
                 </div>

@@ -13,7 +13,7 @@ const Footer = () => (
       <div className='footer-links'>
         <div>
           <h4>Quick Links</h4>
-          <ul>
+          <ul className="*:cursor-pointer *:hover:text-orange-500 *:transition-all *:duration-300">
             <li>Home</li>
             <li>About Us</li>
             <li>Products</li>
@@ -23,7 +23,7 @@ const Footer = () => (
 
         <div>
           <h4>Services</h4>
-          <ul>
+          <ul className="*:cursor-pointer *:hover:text-orange-500 *:transition-all *:duration-300">
             <li>Residential Solar</li>
             <li>Commercial Solar</li>
             <li>Industrial Systems</li>
@@ -34,8 +34,8 @@ const Footer = () => (
         <div>
           <h4>Contact</h4>
           <ul>
-            <li>+91 98XXXXXXXX</li>
-            <li>hello@mohenterprises.com</li>
+            <li>{import.meta.env.VITE_PHONE}</li>
+            <li>{import.meta.env.VITE_EMAIL}</li>
             <li>Indore, India</li>
           </ul>
         </div>

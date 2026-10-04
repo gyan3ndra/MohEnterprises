@@ -8,11 +8,11 @@ const Package = () => {
             system: 'DCR Solar System',
             info: "Generate clean electricity while staying connected to the grid.",
             items: [
-                "Microtek — 3 KW ONGRID DCR KIT — ₹1,75,000 – ₹1,85,000",
-                "Microtek — 5 KW ONGRID DCR KIT — ₹2,70,000 – ₹2,80,000",
-                "Microtek — 8 KW ONGRID DCR KIT — ₹4,00,000 – ₹4,10,000",
-                "Waree/Adani — 3 KW ONGRID DCR KIT — ₹1,80,000 – ₹1,90,000",
-                "Waree/Adani — 5 KW ONGRID DCR KIT — ₹2,80,000 – ₹2,90,000"
+                "Microtek — 3 KW ONGRID DCR KIT",
+                "Microtek — 5 KW ONGRID DCR KIT",
+                "Microtek — 8 KW ONGRID DCR KIT",
+                "Waree/Adani — 3 KW ONGRID DCR KIT",
+                "Waree/Adani — 5 KW ONGRID DCR KIT"
             ],
             bestfor: "Best For: Homes & Businesses"
         },
@@ -23,10 +23,10 @@ const Package = () => {
             system: 'Affordable Solar Solution',
             info: "Reliable grid-connected solar power designed to reduce your electricity bills.",
             items: [
-                "Microtek/Waree/Adani — 10 KW ONGRID NON DCR KIT — ₹3,70,000 – ₹3,80,000",
-                "Waree/Adani/Microtek — 8 KW ONGRID NONDCR KIT — ₹3,35,000 – ₹3,45,000",
-                "Microtek/Waree/Adani — 3 KW ONGRID NON DCR KIT — ₹1,40,000 – ₹1,50,000",
-                "Microtek/Waree/Adani — 5 KW ONGRID NON DCR KIT — ₹2,30,000 – ₹2,40,000"
+                "Microtek/Waree/Adani — 10 KW ONGRID NON DCR KIT",
+                "Waree/Adani/Microtek — 8 KW ONGRID NONDCR KIT",
+                "Microtek/Waree/Adani — 3 KW ONGRID NON DCR KIT",
+                "Microtek/Waree/Adani — 5 KW ONGRID NON DCR KIT"
             ],
             bestfor: "Best For: Cost-Effective Solar"
         },
@@ -37,8 +37,8 @@ const Package = () => {
             system: 'Solar With Battery Backup',
             info: "Independent solar power with battery backup for reliable electricity.",
             items: [
-                "Microtek/Adani/Waree — OFFGRID 3 KW NON DCR KIT — ₹2,00,000 – ₹2,10,000 — With Lithium Ion Battery",
-                "Microtek/Waree/Adani — OFFGRID 5 KW NONDCR KIT — ₹3,40,000 – ₹3,50,000 — With 5120Wh 100Ah 25.6V Lithium Ion Battery"
+                "Microtek/Adani/Waree — OFFGRID 3 KW NON DCR KIT — With Lithium Ion Battery",
+                "Microtek/Waree/Adani — OFFGRID 5 KW NONDCR KIT — With 5120Wh 100Ah 25.6V Lithium Ion Battery"
             ],
             bestfor: "Best For: Independent Power"
         },
@@ -49,10 +49,10 @@ const Package = () => {
             system: 'Smart Hybrid Solar System',
             info: "Smart solar systems combining grid power with battery backup.",
             items: [
-                "Microtek — 3 KW DCR HYBRID KIT — ₹2,30,000 – ₹2,40,000",
-                "Microtek — 5 KW DCR HYBRID KIT — ₹3,90,000 – ₹4,00,000",
-                "Waree/Adani — 3 KW DCR HYBRID KIT — ₹2,45,000 – ₹2,55,000",
-                "Waree/Adani — 5 KW DCR HYBRID KIT — ₹4,20,000 – ₹4,40,000"
+                "Microtek — 3 KW DCR HYBRID KIT",
+                "Microtek — 5 KW DCR HYBRID KIT",
+                "Waree/Adani — 3 KW DCR HYBRID KIT",
+                "Waree/Adani — 5 KW DCR HYBRID KIT"
             ],
             bestfor: "Best For: Smart Energy & Backup"
         }
