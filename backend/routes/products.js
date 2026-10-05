@@ -35,12 +35,14 @@ router.post('/', upload.single('image'), async (req, res) => {
 })
 
 router.get('/kits', async (req, res) => {
-    const kits = await productkitdb.find().populate({
-        path: 'kitItems',
-        model: 'product',
-        select: 'productId productInfo'
-    })
-    res.status(200).json(kits)
+    try {
+        const { kitId } = req.query
+        console.log(kitId)
+        const kits = kitId ? await productkitdb.findOne({kitId}).populate({path: 'kitItems', model: 'product', select: 'productId productInfo imageUrl productType'}) : await productkitdb.find().populate({path: 'kitItems', model: 'product', select: 'productId productInfo imageUrl productType'})
+        res.status(200).json(kits)
+    } catch (error) {
+        res.status(500).json({message:'something went wrong while fetching kits'})
+    }
 })
 
 export default router

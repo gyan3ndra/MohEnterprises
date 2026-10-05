@@ -102,7 +102,7 @@ const Home = () => {
                     <div className='w-full max-w-6xl p-3 text-center'>
                         <span className='flex gap-4 md:gap-10 justify-center w-full items-center'>
                             <h1 className='text-[#2F2F2F] text-[clamp(3.0rem,10vw,8rem)] leading-none font-extrabold'>MOH</h1>
-                            <a href={whatsappUrl} className='animate-pop-in lg:p-5 p-3 h-10 justify-center items-center gap-5 lg:gap-9 flex lg:h-15 rounded-md bg-[#F87061] text-white font-bold text-[10px] sm:text-sm md:text-md cursor-pointer transition-all duration-800 hover:bg-[#ba4b3e]'>Lets Start A Talk! <img className='w-7 h-7 lg:w-10 lg:h-10 invert' src={msgimg} /></a>
+                            <a target="_blank" rel="noopener noreferrer" href={whatsappUrl} className='animate-pop-in lg:p-5 p-3 h-10 justify-center items-center gap-5 lg:gap-9 flex lg:h-15 rounded-md bg-[#F87061] text-white font-bold text-[10px] sm:text-sm md:text-md cursor-pointer transition-all duration-800 hover:bg-[#ba4b3e]'>Lets Start A Talk! <img className='w-7 h-7 lg:w-10 lg:h-10 invert' src={msgimg} /></a>
                         </span>
                         <h1 className='text-[#2F2F2F] text-[clamp(3rem,9vw,8rem)] leading-[0.98] font-extrabold'>ENTERPRISES</h1>
                         <p className='mx-auto mt-4 max-w-2xl text-sm lg:text-lg text-slate-500 font-light'>Smart solar solutions designed to maximize your energy independence and lifetime savings.</p>
@@ -138,7 +138,7 @@ const Home = () => {
                     </button>
                     <a className="relative border-2 rounded-md font-semibold bg-slate-900 overflow-hidden group px-10 py-2 " href='/products'>
                         <span className="relative z-10 text-white font-bold flex gap-5 items-center text-lg">
-                            Products
+                            Products & Kits
                         </span>
 
                         <span className="absolute z-0 top-0 left-0 w-0 h-full bg-gray-700 group-hover:w-full transition-all duration-500" />

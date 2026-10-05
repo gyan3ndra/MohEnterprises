@@ -41,11 +41,11 @@ const Preview = () => {
               alt=""
             />
           </div>
-          <div className='flex gap-2 md:gap-5 justify-center w-full'>
+          <div className='flex gap-2 md:gap-5 justify-center overflow-y-auto scrollbar-thin scrollbar-thumb-slate-800 w-full'>
             {
               products.map((e) => {
                 return (<div key={e._id} onClick={() => { setpreviewimg(e.imageUrl) }} className={`cursor-pointer rounded-md w-10 h-10 bg-white shadow-md shadow-black/20`}>
-                  <img className='w-full h-full object-cover rounded-md' src={e.imageUrl} alt="" />
+                  <img className='w-full shrink-0 h-full object-cover rounded-md' src={e.imageUrl} alt="" />
                 </div>)
               })
             }
@@ -53,7 +53,7 @@ const Preview = () => {
         </div>
         <div className='h-full bg-slate-50 p-2 sm:p-3 flex flex-col gap-3 scrollbar-thin lg:pl-5'>
           <div className='h-fit p-2 flex flex-col justify-center items-center'>
-            <h3 className='text-2xl sm:text-3xl tracking-tight text-slate-800 text-center'>Find the right {productType.toLocaleLowerCase()} for your solar setup</h3>
+            <h3 className='text-2xl sm:text-3xl font-bold tracking-tight text-slate-800 text-center'>Find the right {productType.toLocaleLowerCase()} for your solar setup</h3>
             <p className='font-extralight text-md mt-1 mb-2 text-center'>Explore our available {productType.toLocaleLowerCase()} models and specifications.</p>
             <button onClick={() => { document.getElementById('TYPES').scrollIntoView({ behavior: 'smooth' }) }} className='font-semibold w-fit font-mono  text-slate-800 p-2 pr-4 pl-4 cursor-pointer rounded-md border'>View {productType.toLocaleLowerCase()}</button>
           </div>
@@ -72,15 +72,15 @@ const Preview = () => {
               }
             </div>
           </div>
-          <div className='flex gap-2 mt-auto justify-between items-center border-gray-200'>
-            <a href={`tel:${import.meta.env.VITE_PHONE}`} className='relative w-1/2 text-slate-900 border font-semibold overflow-hidden group p-2 text-center'>
+          <div className='flex flex-col md:flex-row gap-4 md:gap-2 mt-auto justify-between items-center border-gray-200'>
+            <a target="_blank" rel="noopener noreferrer" href={`tel:${import.meta.env.VITE_PHONE}`} className='relative w-full md:w-1/2 text-slate-900 border font-semibold overflow-hidden group p-2 text-center'>
               <span className='z-5 font-bold relative flex justify-center items-center gap-1 sm:gap-2 text-md'>
                 <img className='w-8 h-8 sm:w-10 sm:h-10' src={phoneimg} />
                 CALL US
               </span>
               <span className='absolute top-0 w-0 left-0 bg-gray-200 h-full group-hover:w-full transition-all duration-500'></span>
             </a>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='relative w-1/2 bg-green-400 border border-green-400 text-white font-semibold overflow-hidden group p-2 text-center'>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='relative w-full md:w-1/2 bg-green-400 border border-green-400 text-white font-semibold overflow-hidden group p-2 text-center'>
               <span className='z-5 text-white font-bold relative flex justify-center items-center gap-1 sm:gap-2 text-md'>
                 <img className='w-8 h-8 sm:w-10 sm:h-10' src={whatsappimg} />
                 WHATSAPP

@@ -251,7 +251,15 @@ const Admin = () => {
                     <form className='shadow-md mx-auto h-fit flex flex-col rounded-b-md w-fit gap-3 justify-center items-center p-5' onSubmit={handleKitSubmit}>
                         <div className='flex gap-3'>
                             <input onChange={handleKitChange} name="KitName" className='w-1/2 p-3 rounded-md bg-white border-2 cursor-pointer focus:outline-0' placeholder='Kit Name' type="text" />
-                            <input onChange={handleKitChange} name="KitCategory" className='w-1/2 p-3 rounded-md bg-white border-2 cursor-pointer focus:outline-0' placeholder='kit Category' type="text" />
+                            <select onChange={handleKitChange} name="KitCategory" className='w-1/2 p-3 rounded-md bg-white border-2 cursor-pointer focus:outline-0' id="">
+                                <option value="">Kit Category</option>
+                                <option value="Home">Home</option>
+                                <option value="Business">Business</option>
+                                <option value="Industrial">Industrial</option>
+                                <option value="Backup">Backup</option>
+                                <option value="Agriculture">Agriculture</option>
+                                <option value="Premium">Premium</option>
+                            </select>
                         </div>
                         <input placeholder='Kit Description' onChange={handleKitChange} name="KitInfo" className='w-full p-3 rounded-md bg-white border-2 focus:outline-0' type="text" />
                         <button type='submit' className='pl-10 pr-10 font-mono p-3 w-full rounded-md bg-white text-black font-bold cursor-pointer hover:scale-101 transition-all duration-200'>create kit</button>
@@ -284,7 +292,9 @@ const Admin = () => {
                                     <div className='absolute top-1 left-1 w-full flex flex-wrap gap-2'>
                                         <button onClick={() => { setremoveitem(e.productId) }} className=' bg-red-500 text-sm cursor-pointer hover:bg-red-900 transition-all duration-300 rounded-md pr-3 pl-3 text-white font-mono font-bold'>Delete</button>
                                         <button onClick={() => { setupdateitem(e.productId) }} className='bg-gray-700 text-white text-sm cursor-pointer hover:bg-slate-500 transition-all duration-300 rounded-md pr-3 pl-3 font-mono font-bold'>Update</button>
-                                        <button onClick={() => { setaddtokit(prev => ({ ...prev, productId: e._id })) }} className='bg-blue-600 text-sm cursor-pointer hover:bg-green-800 transition-all duration-300 rounded-md pr-3 pl-3 text-white font-mono font-bold'>Add</button>
+                                        {
+                                            e.productType !== "structure" && <button onClick={() => { setaddtokit(prev => ({ ...prev, productId: e._id })) }} className='bg-blue-600 text-sm cursor-pointer hover:bg-green-800 transition-all duration-300 rounded-md pr-3 pl-3 text-white font-mono font-bold'>Add</button>
+                                        }
                                     </div>
 
                                 </div>
@@ -313,8 +323,11 @@ const Admin = () => {
                                         <p className='w-full text-slate-400 mt-5 pl-1 mb-2'>{e.kitInfo}</p>
                                         <button onClick={() => { setremovekit(e.kitId) }} className=' text-white mt-auto hover:border cursor-pointer font-semibold p-2 pl-6 pr-6 text-center w-fit bg-red-500 rounded-2xl'>Delete Kit</button>
                                     </div>
-                                    <div className='h-full bg-slate-950 rounded-md p-3 flex justify-center items-center'>
-                                        <div className='flex flex-col gap-2 h-full overflow-y-auto'>
+                                    <div className='h-full max-h-60 bg-slate-950 rounded-md p-3 flex justify-center items-center overflow-y-auto scrollbar-thin scrollbar-thumb-slate-800'>
+                                        <div className='flex flex-col gap-1 h-full overflow-y-auto'>
+                                            <p className="text-slate-300 font-light text-[14px]">
+                                                ✘ Solar Structure
+                                            </p>
                                             {e.kitItems.map((item) => {
                                                 return (
                                                     <p key={item._id} className='text-slate-300 font-light text-[14px]'>✘ {item.productInfo}</p>

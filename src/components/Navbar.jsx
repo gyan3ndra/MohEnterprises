@@ -35,7 +35,7 @@ const Navbar = () => {
             </ul>
           }
         </div>
-        <a href={`tel:${import.meta.env.VITE_PHONE}`} className="relative flex items-center font-semibold overflow-hidden bg-white rounded-full px-5 h-9 cursor-pointer text-sm font-mono group">
+        <a target="_blank" rel="noopener noreferrer" href={`tel:${import.meta.env.VITE_PHONE}`} className="relative flex items-center font-semibold overflow-hidden bg-white rounded-full px-5 h-9 cursor-pointer text-sm font-mono group">
           <span className="relative z-10 transition-colors duration-500 group-hover:text-white">
             {import.meta.env.VITE_PHONE}
           </span>

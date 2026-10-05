@@ -12,7 +12,6 @@ import accessoriesimg from '../assets/products/structure.jpg'
 import earthingkitimg from '../assets/products/otherproducts/earthingkit.jpg'
 import packagebannerimg from '../assets/packagebanner.jpg'
 import pantyimg from '../assets/products/otherproducts/panty.jpg'
-import { InverterContent, StructureContent, PanelContent, WireContent } from './ProductContent'
 import Footer from './Footer'
 import { ContactPartition, ProductPartition, whatsappUrl } from './Partition'
 import Package from './Package'
@@ -54,28 +53,24 @@ const Products = () => {
       img: panelimg,
       color: 'bg-white',
       description: 'High-efficiency solar panels with durable construction, excellent sunlight absorption and reliable long-term performance',
-      content: <PanelContent />,
       type: 'PANEL',
     },
     {
       img: wireimg,
       color: 'bg-white',
       description: 'Premium copper solar wires with strong insulation, UV resistance and reliable outdoor performance',
-      content: <WireContent />,
       type: 'WIRE',
     },
     {
       img: structureimg,
       color: 'bg-white',
       description: 'Heavy-duty galvanized steel structure with corrosion resistance, strong support and long-lasting durability',
-      content: <StructureContent />,
       type: 'STRUCTURE',
     },
     {
       img: inverterimg,
       color: 'bg-white',
       description: 'Microtek grid tied D11 inverters LED display bluetooth connectivity',
-      content: <InverterContent />,
       type: 'INVERTER',
     },
     {
@@ -127,13 +122,13 @@ const Products = () => {
               </span>
               <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-slate-700 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
             </button>
-            <button onClick={() => document.getElementById("PACKAGES")?.scrollIntoView({ behavior: "smooth" })} className='relative w-25 sm:w-30 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
+            {/* <button onClick={() => document.getElementById("PACKAGES")?.scrollIntoView({ behavior: "smooth" })} className='relative w-25 sm:w-30 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
               <span className='relative z-5'>
                 Packages
               </span>
               <span className='absolute bg-slate-700 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
 
-            </button>
+            </button> */}
             <button onClick={() => document.getElementById("KITS")?.scrollIntoView({ behavior: "smooth" })} className='relative w-20 sm:w-25 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
               <span className='relative z-5'>
                 Kits
@@ -163,15 +158,15 @@ const Products = () => {
           </div>
         </div>
       </section>
-      <Package />
-      <ScrollCard>
+      {/* <Package /> */}
+      {/* <ScrollCard> */}
         <ProductPartition />
 
-      </ScrollCard>
+      {/* </ScrollCard> */}
       <h1 id='mainproducts' className='font-bold text-4xl text-center text-gray-900 mt-5'>Available Products</h1>
       <p className='text-lg font-extralight text-center text-gray-800'>Power Your Future with Solar</p>
       <div className='p-4 flex gap-2'>
-        <a className="relative border-2 rounded-md font-semibold overflow-hidden group px-5 py-2 hover:scale-101 transition-all duration-300" href={`${whatsappUrl}`}>
+        <a target="_blank" rel="noopener noreferrer" className="relative border-2 rounded-md font-semibold overflow-hidden group px-5 py-2 hover:scale-101 transition-all duration-300" href={`${whatsappUrl}`}>
           <span className="relative z-10 text-slate-800 font-semibold flex gap-5 items-center text-md">
             Get a Quote on WhatsApp
             <img className='w-8 h-8' src={msgimg} alt="" />
@@ -180,7 +175,7 @@ const Products = () => {
           <span className="absolute z-0 top-0 left-0 w-0 h-full bg-gray-100 group-hover:w-full transition-all duration-500" />
         </a>
       </div>
-      <ScrollCard>
+      {/* <ScrollCard> */}
         <section className='m-2 md:m-5 h-fit grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
           {
             productcards.map((e) => {
@@ -207,8 +202,8 @@ const Products = () => {
           }
 
         </section>
-      </ScrollCard>
-      <div className='w-5/6 h-px bg-gray-200 mt-10 mx-auto'></div>
+      {/* </ScrollCard> */}
+      <div className='w-5/6 h-px bg-gray-200 mt-5 mx-auto'></div>
       <Kits/>
       <div className='w-5/6 h-px bg-gray-200 mt-10 mx-auto'></div>
       <ContactPartition />

@@ -86,7 +86,7 @@ router.post('/createkit', async (req, res) => {
         const kit = await productkitdb.create({
             kitName: KitName,
             kitInfo: KitInfo,
-            kitCategory: KitCategory
+            kitCategory: KitCategory,
         })
 
         // console.log("CREATED:", kit)
