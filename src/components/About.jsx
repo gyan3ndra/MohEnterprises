@@ -33,7 +33,6 @@ const About = () => {
               <span className="absolute z-0 top-0 left-0 w-0 h-full bg-[#f55948] group-hover:w-full transition-all duration-500" />
             </a>
             </div>
-            {/* <a href={`tel:${import.meta.env.PHONE}`} className='primary-button'>Get a Free Consultation</a> */}
           </div>
 
           <div className='about-visual'>

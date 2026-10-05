@@ -1,24 +1,16 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import panelimg from '../assets/products/panel.jpg'
 import wireimg from '../assets/products/wire.jpg'
 import msgimg from '../assets/msg.png'
 import inverterimg from '../assets/products/inverter.jpg'
 import structureimg from '../assets/products/structure.jpg'
-import phoneimg from '../assets/phone.png'
 import distributionboximg from '../assets/products/otherproducts/distributionbox.jpg'
 import batteryimg from '../assets/products/otherproducts/battery.jpg'
 import accessoriesimg from '../assets/products/structure.jpg'
 import earthingkitimg from '../assets/products/otherproducts/earthingkit.jpg'
-import packagebannerimg from '../assets/packagebanner.jpg'
-import pantyimg from '../assets/products/otherproducts/panty.jpg'
 import Footer from './Footer'
 import { ContactPartition, ProductPartition, whatsappUrl } from './Partition'
-import Package from './Package'
-import ScrollCard from './ScrollCard'
-import { button, p } from 'framer-motion/client'
 import Kits from './Kits'
-import externallinkimg from '../assets/externallink.png'
 
 const Products = () => {
   const [current, setCurrent] = useState(0)
@@ -123,13 +115,7 @@ const Products = () => {
               </span>
               <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-slate-800 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
             </button>
-            {/* <button onClick={() => document.getElementById("PACKAGES")?.scrollIntoView({ behavior: "smooth" })} className='relative w-25 sm:w-30 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
-              <span className='relative z-5'>
-                Packages
-              </span>
-              <span className='absolute bg-slate-700 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
-
-            </button> */}
+            
             <button onClick={() => document.getElementById("KITS")?.scrollIntoView({ behavior: "smooth" })} className='relative w-20 sm:w-25 font-semibold rounded-3xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
               <span className='relative z-5'>
                 Kits
@@ -139,7 +125,6 @@ const Products = () => {
             </button>
           </div>
         </div>
-        {/* grid 2 */}
         <div className='h-full flex justify-center items-center order-1 lg:order-2'>
           <div className="w-full lg:w-3/4 overflow-hidden rounded-md">
 
@@ -159,11 +144,8 @@ const Products = () => {
           </div>
         </div>
       </section>
-      {/* <Package /> */}
-      {/* <ScrollCard> */}
         <ProductPartition />
 
-      {/* </ScrollCard> */}
       <h1 id='mainproducts' className='font-bold text-4xl text-center text-gray-900 mt-5'>Available Products</h1>
       <p className='text-lg font-extralight text-center text-gray-800'>Power Your Future with Solar</p>
       <div className='p-4 flex gap-2'>
@@ -176,7 +158,6 @@ const Products = () => {
           <span className="absolute z-0 top-0 left-0 w-0 h-full bg-gray-100 group-hover:w-full transition-all duration-500" />
         </a>
       </div>
-      {/* <ScrollCard> */}
         <section className='m-2 md:m-5 h-fit grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 *:hover:scale-101 *:cursor-pointer *:transition-all *:duration-300'>
           {
             productcards.map((e) => {
@@ -203,7 +184,6 @@ const Products = () => {
           }
 
         </section>
-      {/* </ScrollCard> */}
       <div className='w-5/6 h-px bg-gray-200 mt-5 mx-auto'></div>
       <Kits/>
       <div className='w-5/6 h-px bg-gray-200 mt-10 mx-auto'></div>

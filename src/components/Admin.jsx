@@ -1,5 +1,6 @@
 import React, { memo, useState, useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
+
 const Admin = () => {
     const isadmin = localStorage.getItem('admin')
     if (isadmin !== 'true') {

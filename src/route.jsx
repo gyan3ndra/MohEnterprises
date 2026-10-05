@@ -7,7 +7,6 @@ import Products from "./components/Products.jsx";
 import Preview from "./components/Preview.jsx";
 import Admin from "./components/Admin.jsx";
 import Protected from "./components/Protected.jsx";
-import Package from "./components/Package.jsx";
 import Services from "./components/Services.jsx";
 import KitsPreview from "./components/KitsPreview.jsx";
 
@@ -31,10 +30,6 @@ const router = createBrowserRouter([
             {
                 path: 'products',
                 element: <Products />,
-            },
-            {
-                path: 'package',
-                element:<Package/>
             },
             {
                 path: 'preview',

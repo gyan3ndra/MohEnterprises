@@ -1,5 +1,3 @@
-import { section } from 'framer-motion/client'
-import ScrollCard from './ScrollCard';
 import React, { memo, useEffect, useState } from 'react'
 import externallinkimg from '../assets/externallink.png'
 

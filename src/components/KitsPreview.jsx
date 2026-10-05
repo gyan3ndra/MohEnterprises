@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom'
 import phoneimg from '../assets/phone.png'
 import messageimg from '../assets/msg.png'
 import externallinkimg from '../assets/externallink.png'
+
+
 const KitsPreview = memo(() => {
   const [params] = useSearchParams()
   const [viewlist, setviewlist] = useState(false)

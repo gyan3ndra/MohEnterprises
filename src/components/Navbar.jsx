@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import menuimg from '../assets/menu.png'
-//h
+
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  // const navigate = (path) => {
-  //   onNavigate(path)
-  //   setMenuOpen(false)
-  // }
 
   return (
     <header className='z-50 p-3 flex gap-10 items-center fixed top-0 w-full'>
@@ -21,7 +18,6 @@ const Navbar = () => {
           <li><Link to='/contact'>Contact</Link></li>
           <li><Link to='/products'>Products</Link></li>
           <li><Link to='/services'>Services</Link></li>
-          {/* <li><button type='button' onClick={() => onNavigate('/contact')}>Contact</button></li> */}
         </ul>
         <div onClick={()=>{setMenuOpen(!menuOpen)}} className={`flex md:hidden w-10 h-10 ${menuOpen?'bg-white':'bg-white'} rounded-full cursor-pointer`}>
           <img className='w-full h-full p-2' src={menuimg} alt="" />

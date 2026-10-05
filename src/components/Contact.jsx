@@ -67,13 +67,7 @@ const Contact = () => {
           </form>
         </div>
       </section>
-      {/* <div className='absolute bottom-4 left-1/2 -translate-x-1/2'>
-        <ul className='flex gap-10 *:rounded-full *:cursor-pointer'>
-        <li className='h-5 w-5'><NavLink className={({ isActive }) => isActive ? 'bg-amber-600' : 'bg-blue-300'} to='/contact'></NavLink></li>
-        <li className='h-5 w-5 bg-amber-50'><NavLink to='contact/get-in-touch'></NavLink></li>
-        <li className='h-5 w-5 bg-amber-50'><NavLink to='/contact/info'></NavLink></li>
-      </ul>
-      </div> */}
+      
     </section>
   )
 }

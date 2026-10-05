@@ -14,7 +14,6 @@ const Preview = () => {
   const productType = params.get('type')
   const [products, setproducts] = useState([])
   const [previewimg, setpreviewimg] = useState(null)
-  // const images = [{ color: 'bg-red-300' }, { color: 'bg-blue-300' }, { color: 'bg-green-300' }, { color: 'bg-yellow-300' }]
 
   useEffect(() => {
     const fetchproducts = async () => {

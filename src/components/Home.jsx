@@ -1,12 +1,7 @@
 import React from 'react'
 import Footer from './Footer.jsx'
 import msgimg from '../assets/msg.png'
-import s1 from '../assets/logo/s1.png'
-import s2 from '../assets/logo/s2.png'
-import s3 from '../assets/logo/s3.png'
-import s4 from '../assets/logo/s4.png'
-import s5 from '../assets/logo/s5.png'
-import s6 from '../assets/logo/s6.png'
+
 import ScrollCard from './ScrollCard.jsx'
 import Reside from '../assets/ResidentialSolarInstallation.jpg'
 import Commercial from '../assets/CommercialPowerSystem.jpg'
@@ -15,41 +10,10 @@ import powerimg from '../assets/power.png'
 import solarimg from '../assets/solar.png'
 import wrenchimg from '../assets/wrench.png'
 import { ContactPartition, whatsappUrl } from './Partition.jsx'
-import Package from './Package.jsx'
-import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { div } from 'framer-motion/client'
 
 const Home = () => {
-    const companyLogo = [s6, s5, s3, s4, s2, s1]
     const navigate = useNavigate()
-
-    const offercards = [
-        {
-            t1: 'LIMITED TIME OFFER',
-            t2: 'Upgrade to Solar & Save',
-            info: 'Get special pricing on selected solar panels for your home or business.',
-            t3: (<>Save up to{" "}<span className="text-white font-extrabold text-5xl">15%</span></>),
-            t4: 'Explore Offer →',
-            color: 'bg-red-300'
-        },
-        {
-            t1: 'SPECIAL PACKAGE',
-            t2: 'Go Solar, Save More',
-            info: 'Get panels, inverter, wires and mounting structure together at a package price.',
-            t3: 'Combo Deals Available',
-            t4: 'View Packages →',
-            color: 'bg-blue-300'
-        },
-        {
-            t1: 'INSTALLATION DEAL',
-            t2: 'Get Your Solar Setup Installed',
-            info: 'Professional installation support for selected solar systems.',
-            t3: 'Special Installation Pricing',
-            t4: 'Know More →',
-            color: 'bg-yellow-300'
-        }
-    ]
 
     const works = [
         {
@@ -185,16 +149,7 @@ const Home = () => {
                     </a>
                 </div>
             </section>
-            {/* <Package /> */}
-            {/* <section className='company-logos'>
-                {
-                    companyLogo.map((e, index) => {
-                        return (
-                            <img key={index} src={e} alt={`Solar partner ${index + 1}`} />
-                        )
-                    })
-                }
-            </section> */}
+           
             <section className='grid grid-cols-1 md:grid-cols-2 p-4 mt-5'>
                 <div className='p-2'>
                     <p className='text-[#F87061] font-semibold uppercase tracking-[0.2em] text-sm'>Why Choose Us?</p>
@@ -252,32 +207,13 @@ const Home = () => {
                                         </ul>
 
                                     </div>
-                                    {/* <div className='absolute bottom-0 left-0 h-2 bg-orange-400/90 w-full rounded-b-full block sm:hidden'></div> */}
                                 </article>
                             </ScrollCard>
                         ))}
                     </div>
                 </div>
             </section>
-            {/* <section id='OFFERS' className=' p-3'>
-                <div className='grid grid-cols-1 md:grid-cols-3 w-full p-3 lg:w-3/4 mx-auto h-fit gap-10'>
-                    {
-                        offercards.map((e) => {
-                            return (
-                                <div key={e} className={`relative shadow-lg p-4 ${e.color} h-80 md:h-90`}>
-                                <div className={`absolute top-0 right-2 h-30 w-12 bg-slate-800`} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%)" }} />
-                                <h3 className='text-md font-bold mt-5 font-mono '>{e.t1}</h3>
-                                <h2 className='text-2xl w-3/4 font-semibold font-mono'>{e.t2}</h2>
-                                <p className='text-md font-light mt-3'>{e.info}</p>
-                                <h1 className='text-2xl font-bold text-center text-slate-900 mt-5'>{e.t3}</h1>
-                                <div className='flex w-full justify-center'><a className='text-lg font-bold font-mono text-blue-900 mt-2' href="">{e.t4}</a></div>
-                                
-                                </div>
-                                )
-                            })
-                    }
-                    </div>
-                    </section> */}
+            
             <ContactPartition />
             <Footer />
         </>
