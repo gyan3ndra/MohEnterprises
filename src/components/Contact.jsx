@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { whatsappUrl } from './Partition'
+import externallinkimg from '../assets/externallink.png'
 
 const Contact = () => {
   const contactdetails = [
@@ -51,7 +52,7 @@ const Contact = () => {
             }
           </div>
           <p className='font-light text-md md:text-lg mt-3 mb-2'>Tell us about your home or business and get a personalized solar solution based on your energy needs.</p>
-          <a href={whatsappUrl} className='text-[14px] font-semibold bg-[#F87061] text-white hover:bg-orange-800 transition-all duration-300 p-2 pr-4 pl-4 rounded-md'>Get a Solar Estimate</a>
+          <a href={whatsappUrl} className='text-[14px] font-semibold bg-[#F87061] text-white hover:bg-orange-800 transition-all duration-300 p-2 pr-4 pl-4 rounded-md flex gap-2 w-fit items-center'>Get a Solar Estimate <img className='invert h-5 w-5' src={externallinkimg}/></a>
         </div>
         <div className='flex justify-center w-full p-0 sm:p-2'>
           <form className='w-full lg:w-[80%] max-w-xl bg-white p-3 sm:p-5 gap-3 flex flex-col shadow-lg shadow-slate-900/20 rounded-2xl'>
@@ -62,7 +63,7 @@ const Contact = () => {
             </span>
             <input onChange={handleChange} name='email' className='w-full h-13 focus:outline-0 border rounded-md p-3' type="text" placeholder='Email​' />
             <textarea onChange={handleChange} name='message' className='w-full min-h-35 focus:outline-0 border p-3' placeholder='How can we help?'></textarea>
-            <button type='submit' className='text-white p-4 w-full hover:bg-[#ff513d] bg-[#fc5f4e] rounded-md font-semibold cursor-pointer hover:scale-101 transition-all duration-200'>Submit</button>
+            <button type='submit' className='text-white p-4 w-full hover:bg-[#ff513d] bg-[#F87061] rounded-md font-semibold cursor-pointer hover:scale-101 transition-all duration-200'>Submit</button>
           </form>
         </div>
       </section>

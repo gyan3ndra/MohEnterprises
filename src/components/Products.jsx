@@ -117,11 +117,11 @@ const Products = () => {
           </div>
           <div className='w-full bg-white rounded-full h-full flex gap-2 sm:gap-3 items-center p-2'>
             <button onClick={() => document.getElementById("mainproducts")?.scrollIntoView({ behavior: "smooth" })
-            } className='bg-slate-900 overflow-hidden p-2 w-35 font-semibold sm:w-40 rounded-2xl text-sm text-white cursor-pointer group relative'>
+            } className='bg-slate-900 overflow-hidden p-2 w-35 font-semibold sm:w-40 rounded-3xl text-sm text-white cursor-pointer group relative'>
               <span className="relative z-5 transition-colors duration-500 group-hover:text-white">
                 More Products
               </span>
-              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-slate-700 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
+              <span className='left-0 inset-y-0  absolute h-full bottom-0 bg-slate-800 w-0 group-hover:w-full transition-all duration-700 ease-in-out'></span>
             </button>
             {/* <button onClick={() => document.getElementById("PACKAGES")?.scrollIntoView({ behavior: "smooth" })} className='relative w-25 sm:w-30 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
               <span className='relative z-5'>
@@ -130,11 +130,11 @@ const Products = () => {
               <span className='absolute bg-slate-700 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
 
             </button> */}
-            <button onClick={() => document.getElementById("KITS")?.scrollIntoView({ behavior: "smooth" })} className='relative w-20 sm:w-25 font-semibold rounded-2xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
+            <button onClick={() => document.getElementById("KITS")?.scrollIntoView({ behavior: "smooth" })} className='relative w-20 sm:w-25 font-semibold rounded-3xl text-sm h-full bg-slate-900 cursor-pointer text-white group overflow-hidden'>
               <span className='relative z-5'>
                 Kits
               </span>
-              <span className='absolute bg-slate-700 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
+              <span className='absolute bg-slate-800 left-0 w-0 h-full top-0 group-hover:w-full transition-all duration-500'></span>
 
             </button>
           </div>
