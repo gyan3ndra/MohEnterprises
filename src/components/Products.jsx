@@ -18,6 +18,7 @@ import Package from './Package'
 import ScrollCard from './ScrollCard'
 import { button, p } from 'framer-motion/client'
 import Kits from './Kits'
+import externallinkimg from '../assets/externallink.png'
 
 const Products = () => {
   const [current, setCurrent] = useState(0)
@@ -185,13 +186,13 @@ const Products = () => {
                   <div className='flex-1 flex flex-col p-1'>
                     <h3 className='text-[9px] md:text-xs p-1 pl-4 pr-4 w-fit rounded-md border font-semibold text-slate-900'>{e.type}</h3>
                     <div className='h-px bg-gray-300 w-5/6 mx-auto mt-3 mb-3'></div>
-                    <p className='text-gray-600 text-[9px] font-light md:text-sm'>{e.description}</p>
+                    <p className='text-gray-600 text-[10px] font-light md:text-sm'>{e.description}</p>
                     <div className='flex justify-end'>
                     </div>
                   </div>
                   <a href={`/preview?type=${e.type}`} className='p-2 text-center md:p-3 relative cursor-pointer font-light bg-slate-900 w-1/2 text-sm group ml-auto'>
                     <span className="relative z-10 text-white transition-colors duration-500 group-hover:text-black">
-                      Preview
+                      Preview 
                     </span>
 
                     <span className="absolute inset-y-0 left-0 w-0 bg-gray-100 transition-all duration-700 ease-in-out group-hover:w-full"></span>

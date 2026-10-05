@@ -17,9 +17,12 @@ import wrenchimg from '../assets/wrench.png'
 import { ContactPartition, whatsappUrl } from './Partition.jsx'
 import Package from './Package.jsx'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { div } from 'framer-motion/client'
 
 const Home = () => {
     const companyLogo = [s6, s5, s3, s4, s2, s1]
+    const navigate = useNavigate()
 
     const offercards = [
         {
@@ -50,48 +53,83 @@ const Home = () => {
 
     const works = [
         {
-            title: 'Residential Solar Installation',
-            type: 'Home Energy Upgrade',
+            title: "Powering Homes With Solar",
+            type: "Residential Solar Solutions",
             image: Reside,
-            description:
-                'A complete rooftop solar solution designed to reduce electricity costs while improving long-term energy independence for a family home.',
-            details: ['High-efficiency panels', 'Smart monitoring', 'Lower monthly utility bills']
+            description: "We design and install reliable solar systems for homes to reduce electricity expenses, increase energy independence, and make everyday power cleaner.",
+            details: [
+                "Customized rooftop solar systems",
+                "Professional installation & setup",
+                "Lower electricity bills",
+                "Clean and reliable energy"
+            ]
         },
         {
-            title: 'Commercial Power System',
-            type: 'Business Energy Solution',
+            title: "Helping Businesses Save Energy",
+            type: "Commercial Solar Solutions",
             image: Commercial,
-            description:
-                'A tailored commercial setup built to support daily operations, improve system efficiency, and deliver reliable power performance for business growth.',
-            details: ['Large-scale panel layout', 'Battery backup support', 'Optimized energy usage']
+            description: "We provide scalable solar solutions for businesses that help control rising electricity costs while delivering dependable power for daily operations.",
+            details: [
+                "System designed for business needs",
+                "High-efficiency solar panels",
+                "Energy cost reduction",
+                "Reliable power performance"
+            ]
         },
         {
-            title: 'Industrial Solar Project',
-            type: 'Sustainable Production',
+            title: "Building Smarter Industrial Energy",
+            type: "Industrial Solar Solutions",
             image: Industrial,
-            description:
-                'A robust solar installation that helps manufacturing and industrial facilities reduce overhead costs and move toward cleaner, more sustainable operations.',
-            details: ['Heavy-duty infrastructure', 'Performance tracking', 'Long-term savings']
+            description: "We help industries move toward efficient and sustainable energy by providing powerful solar systems built for high-demand operations and long-term savings.",
+            details: [
+                "High-capacity solar systems",
+                "Industrial-grade components",
+                "Reduced operational energy costs",
+                "Long-term energy independence"
+            ]
         }
     ]
 
     const card = [
         {
             img: solarimg,
-            title: "INSTALL",
-            msg: "Complete solar panel installation",
+            title: "SOLAR INSTALLATION",
+            msg: "Professional installation for homes and businesses",
         },
         {
             img: wrenchimg,
-            title: "MAINTAIN",
-            msg: "Cleaning, inspection & repairs",
+            title: "SOLAR MAINTENANCE",
+            msg: "Cleaning, inspection and reliable system maintenance",
         },
         {
             img: powerimg,
-            title: "POWER",
-            msg: "Solar panels, batteries & inverters",
+            title: "ENERGY SOLUTIONS",
+            msg: "Panels, batteries and inverters for reliable power",
         },
     ];
+
+    const points = [
+        {
+            "number": "01",
+            "title": "Quality You Can Trust",
+            "description": "Reliable solar panels, inverters, batteries, and accessories from trusted brands."
+        },
+        {
+            "number": "02",
+            "title": "Professional Installation",
+            "description": "Carefully planned and professionally executed installations for safe, efficient, and long-lasting performance."
+        },
+        {
+            "number": "03",
+            "title": "Complete Solar Solutions",
+            "description": "From consultation and product selection to installation and maintenance, everything under one roof."
+        },
+        {
+            "number": "04",
+            "title": "Support Beyond Installation",
+            "description": "Ongoing assistance and maintenance to help keep your solar system performing at its best."
+        }
+    ]
 
 
     return (
@@ -101,22 +139,24 @@ const Home = () => {
                 <section className='flex z- min-h-[45vh] flex-col items-center justify-center px-4 py-8'>
                     <div className='w-full max-w-6xl p-3 text-center'>
                         <span className='flex gap-4 md:gap-10 justify-center w-full items-center'>
-                            <h1 className='text-[#2F2F2F] text-[clamp(3.0rem,10vw,8rem)] leading-none font-extrabold'>MOH</h1>
+                            <h1 className='text-[#2F2F2F] text-[clamp(3.0rem,10vw,8rem)] leading-none font-extrabold [-webkit-text-stroke:2px_#2F2F2F]'>MOH</h1>
                             <a target="_blank" rel="noopener noreferrer" href={whatsappUrl} className='animate-pop-in lg:p-5 p-3 h-10 justify-center items-center gap-5 lg:gap-9 flex lg:h-15 rounded-md bg-[#F87061] text-white font-bold text-[10px] sm:text-sm md:text-md cursor-pointer transition-all duration-800 hover:bg-[#ba4b3e]'>Lets Start A Talk! <img className='w-7 h-7 lg:w-10 lg:h-10 invert' src={msgimg} /></a>
                         </span>
-                        <h1 className='text-[#2F2F2F] text-[clamp(3rem,9vw,8rem)] leading-[0.98] font-extrabold'>ENTERPRISES</h1>
-                        <p className='mx-auto mt-4 max-w-2xl text-sm lg:text-lg text-slate-500 font-light'>Smart solar solutions designed to maximize your energy independence and lifetime savings.</p>
+                        <h1 className='text-[#2F2F2F] text-[clamp(3rem,9vw,8rem)] leading-[0.98] font-extrabold [-webkit-text-stroke:2px_#2F2F2F]'>ENTERPRISES</h1>
+                        <p className='mx-auto mt-4 max-w-2xl text-sm lg:text-lg text-slate-600 font-light'>Smart solar solutions designed to maximize your energy independence and lifetime savings.</p>
                     </div>
                 </section>
                 <section className='grid grid-cols-1 md:grid-cols-3 p-4 gap-3 md:gap-5'>
                     {card.map((e, index) => {
                         return (
                             <div key={e.title} className='rounded-b-2xl relative rounded-md min-h-28 p-4 flex justify-center items-center gap-5'>
-                                <img src={e.img} alt="" />
+                                <div className='bg-slate-950 p-3 rounded-2xl'>
+                                    <img className='w-full h-full object-contain invert' src={e.img} alt="" />
+                                </div>
                                 <div className=''>
-                                    {/* <div className='h-px top-0 left-0 w-full absolute'></div> */}
+
                                     <h4 className='font-extrabold text-lg'>{e.title}</h4>
-                                    <p className='text-lg font-light '>{e.msg}</p>
+                                    <p className='text-md font-light mt-1'>{e.msg}</p>
                                 </div>
                             </div>
                         )
@@ -124,20 +164,20 @@ const Home = () => {
 
                 </section>
             </section>
-            <section className="p-5 flex flex-col items-center gap-5 mt-10 mb-10">
+            <section className="p-5 flex flex-col items-center gap-5 mt-15 mb-10">
                 <h1 className="text-3xl md:text-4xl font-light text-center mb-2">
-                    Explore Our Packages & Available Products
+                    Explore Our Services & Available Products
                 </h1>
                 <div className='flex gap-2 *:cursor-pointer'>
-                    <button className="relative border-2 rounded-md font-semibold overflow-hidden group px-10 py-2 " onClick={() => { document.getElementById('PACKAGES').scrollIntoView({ behavior: 'smooth' }) }}>
-                        <span className="relative z-10 text-slate-900 font-bold flex gap-5 items-center text-lg">
-                            Packages
+                    <button className="relative border-2 rounded-md font-semibold overflow-hidden group px-7 sm:px-10 py-2 " onClick={() => { navigate('/services') }}>
+                        <span className="relative z-10 text-slate-900 font-bold flex gap-5 items-center text-md md:text-lg">
+                            Services
                         </span>
 
                         <span className="absolute z-0 top-0 left-0 w-0 h-full bg-gray-200 group-hover:w-full transition-all duration-500" />
                     </button>
-                    <a className="relative border-2 rounded-md font-semibold bg-slate-900 overflow-hidden group px-10 py-2 " href='/products'>
-                        <span className="relative z-10 text-white font-bold flex gap-5 items-center text-lg">
+                    <a className="relative border-2 rounded-md font-semibold bg-slate-900 overflow-hidden group px-7 sm:px-10 py-2 " href='/products'>
+                        <span className="relative z-10 text-white font-bold flex gap-5 items-center text-md md:text-lg">
                             Products & Kits
                         </span>
 
@@ -145,7 +185,7 @@ const Home = () => {
                     </a>
                 </div>
             </section>
-            <Package />
+            {/* <Package /> */}
             {/* <section className='company-logos'>
                 {
                     companyLogo.map((e, index) => {
@@ -155,31 +195,64 @@ const Home = () => {
                     })
                 }
             </section> */}
-
+            <section className='grid grid-cols-1 md:grid-cols-2 p-4 mt-5'>
+                <div className='p-2'>
+                    <p className='text-[#F87061] font-semibold uppercase tracking-[0.2em] text-sm'>Why Choose Us?</p>
+                    <div>
+                        <h2 className='mt-3 text-3xl lg:text-5xl font-extrabold text-slate-800'>
+                            More Than
+                        </h2>
+                        <span className="text-[#F87061] mt-3 text-3xl lg:text-5xl font-extrabold">Just Solar.</span>
+                    </div>
+                    <p className='text-slate-700 font-light text-lg sm:text-2xl mt-3 mb-10'>We don't just install solar systems , we provide reliable energy solutions designed around your needs, your property, and your long-term goals.</p>
+                    <a className='p-3 pl-8 pr-8 cursor-pointer hover:bg-orange-800 transition-all duration-300 bg-[#F87061] rounded-md text-white font-bold text-lg' href={whatsappUrl}>Talk to Us</a>
+                </div>
+                <div className='flex flex-col gap-3 p-2 pt-8 sm:pt-0'>
+                    {
+                        points.map((e)=>{
+                            return(
+                                <div key={e.number} className='bg-slate-100 rounded-md p-3 shadow-md flex gap-3'>
+                                    <h1 className='font-bold text-3xl p-2'>
+                                        {e.number}
+                                    </h1>
+                                    <div>
+                                        <h1 className='text-lg font-bold'>{e.title}</h1>
+                                        <p className='text-slate-600 font-light'>{e.description}</p>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            </section>
             <section className='py-16 px-4 lg:px-10'>
                 <div className='max-w-6xl mx-auto'>
                     <div className='mb-12 text-center'>
-                        <p className='text-[#F87061] font-semibold uppercase tracking-[0.2em] text-sm'>Our Works</p>
+                        <p className='text-[#F87061] font-semibold uppercase tracking-[0.2em] text-sm'>Our Work</p>
                         <h2 className='mt-3 text-3xl lg:text-5xl font-bold text-slate-800'>Projects that deliver real impact</h2>
                     </div>
 
                     <div className='space-y-10'>
                         {works.map((work, index) => (
                             <ScrollCard>
-                                <article key={index} className={`work-card hover:scale-101 transition-all duration-300 hover:border border-slate-600/70 ${index % 2 === 0 ? 'work-card-left' : 'work-card-right'}`}>
+                                <article key={index} className={`work-card gap-5 hover:scale-101 transition-all duration-300  ${index % 2 === 0 ? 'work-card-left' : 'work-card-right'}`}>
                                     <div className='work-image'>
-                                        <img src={work.image} alt={work.title} />
+                                        <img className='' src={work.image} alt={work.title} />
                                     </div>
                                     <div className='work-content'>
-                                        <span className='work-tag'>{work.type}</span>
+                                        <span className='work-tag shadow-md'>{work.type}</span>
                                         <h3>{work.title}</h3>
                                         <p>{work.description}</p>
-                                        <ul>
+                                        <ul className=''>
                                             {work.details.map((detail, detailIndex) => (
-                                                <li key={detailIndex}>✔ {detail}</li>
+                                                <li className='flex items-center gap-3 text-slate-800' key={detailIndex}><span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-800 text-[10px] text-white">
+                                                    ✓
+                                                </span> {detail}</li>
                                             ))}
                                         </ul>
+
                                     </div>
+                                    {/* <div className='absolute bottom-0 left-0 h-2 bg-orange-400/90 w-full rounded-b-full block sm:hidden'></div> */}
                                 </article>
                             </ScrollCard>
                         ))}

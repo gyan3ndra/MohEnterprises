@@ -145,7 +145,7 @@ I'd like to know the price, installation details, and availability. Please share
         <h3 className='text-md p-1 pr-6 pl-5 rounded-2xl bg-slate-100 text-slate-700 border-2 mt-5 w-fit'>{kits.kitCategory}</h3>
         <p className='mt-4 text-lg md:text-2xl font-extralight pl-1 mb-5'>{kits.kitInfo}</p>
         <div className='flex gap-3 md:gap-5 flex-col md:flex-row'>
-          <a target="_blank" rel="noopener noreferrer" className='text-md md:text-lg p-3 pl-4 pr-4 text-center bg-black hover:bg-gray-800 transition-all duration-200 text-white rounded-md flex gap-3 items-center justify-center' href={`tel:${import.meta.env.VITE_PHONE}`}>Call Us <img src={phoneimg} className='w-6 h-6 invert' /></a>
+          <a target="_blank" rel="noopener noreferrer" className='text-md md:text-lg p-3 pl-4 pr-4 text-center bg-black hover:bg-gray-800 transition-all duration-200 text-white rounded-md flex gap-3 items-center justify-center lg:pr-10 lg:pl-10' href={`tel:${import.meta.env.VITE_PHONE}`}><img src={phoneimg} className='w-6 h-6 invert' /> Call Us</a>
           <a target="_blank" rel="noopener noreferrer" className='text-md md:text-lg p-3 pl-4 pr-4 text-center bg-green-400 hover:bg-green-500 transition-all duration-200  text-white rounded-md flex gap-3 items-center justify-center' href={whatsappUrl}>Ask About This Kit<img src={messageimg} className='w-6 h-6 invert' /></a>
         </div>
         <div className='mt-10'>
@@ -161,13 +161,13 @@ I'd like to know the price, installation details, and availability. Please share
           </div>
         </div>
       </div>
-      <div className='flex justify-center items-center p-4 bg-gray-300 rounded-2xl order-1 lg:order-2'>
+      <div className='flex justify-center items-center p-4 bg-slate-800 rounded-2xl order-1 lg:order-2'>
         {
           kits.kitItems && <ImageSlider />
         }
       </div>
       {
-        viewlist && <div className='fixed top-1/2 pt-10 left-1/2 -translate-x-1/2 p-5 -translate-y-1/2 w-90 h-100 rounded-2xl bg-slate-900/90 flex justify-center items-center backdrop-blur-md'>
+        viewlist && <div className='fixed top-1/2 pt-10 left-1/2 -translate-x-1/2 p-5 -translate-y-1/2 w-80 md:w-90 h-100 rounded-2xl bg-slate-900/90 flex justify-center items-center backdrop-blur-md'>
           <button onClick={() => setviewlist(false)} className='absolute top-2 left-3 cursor-pointer font-bold text-slate-200'>✖</button>
           <div className='w-full scrollbar-thin overflow-y-auto overflow-x-hidden max-h-90'>
             <ul className='text-center text-sm text-slate-300 flex flex-col gap-2 font-semibold'>

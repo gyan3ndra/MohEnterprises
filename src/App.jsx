@@ -4,6 +4,18 @@ import { Outlet } from 'react-router-dom'
 import Home from './components/Home.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
+import { useLocation } from "react-router-dom"
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
+
 
 function App() {
   // const [page, setPage] = useState(() => window.location.pathname)
@@ -27,12 +39,13 @@ function App() {
   // }
 
   return (
-    <>
+    <section className=''>
       {/* <Navbar onNavigate={handleNavigate} />
       {renderPage()} */}
-      <Navbar/>
-      <Outlet/>
-    </>
+      <Navbar />
+      <ScrollToTop />
+      <Outlet />
+    </section>
   )
 }
 

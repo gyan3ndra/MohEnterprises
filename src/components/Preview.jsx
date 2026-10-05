@@ -7,6 +7,7 @@ import phoneimg from '../assets/phone.png'
 import { useSearchParams } from 'react-router-dom'
 import { ContactPartition,whatsappUrl } from './Partition'
 
+
 const Preview = () => {
   
   const [params] = useSearchParams()

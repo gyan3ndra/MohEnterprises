@@ -1,9 +1,9 @@
+
 const Footer = () => (
   <footer className='site-footer'>
     <div className='footer-inner'>
       <div className='footer-brand'>
-        {/* <div className='brand-mark'>MOH CHAMAR</div> */}
-        <h3>MOH ENTERPRISES</h3>
+        <h3 className="font-bold">Moh Enterprises</h3>
         <p>
           Delivering smart, sustainable solar power systems for homes, businesses,
           and industrial facilities with clean energy that boosts efficiency and value.
@@ -14,10 +14,10 @@ const Footer = () => (
         <div>
           <h4>Quick Links</h4>
           <ul className="*:cursor-pointer *:hover:text-orange-500 *:transition-all *:duration-300">
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Products</li>
-            <li>Services</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/services">Services</a></li>
           </ul>
         </div>
 

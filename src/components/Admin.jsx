@@ -317,7 +317,7 @@ const Admin = () => {
                                     <div className='h-full flex flex-col'>
                                         <div className='flex gap-3 items-center'>
                                             <h1 className='p-2 pl-5 pr-5 border font-semibold w-fit rounded-3xl text-white bg-slate-950 border-slate-600'>{e.kitId}</h1>
-                                            <h2 className='font-semibold text-lg text-white'>{e.kitName}</h2>
+                                            <h2 className='font-semibold text-md text-white'>{e.kitName}</h2>
                                         </div>
                                         <h2 className='p-1 pl-5 pr-5 bg-slate-100 rounded-2xl w-fit mt-2 text-sm'>{e.kitCategory}</h2>
                                         <p className='w-full text-slate-400 mt-5 pl-1 mb-2'>{e.kitInfo}</p>

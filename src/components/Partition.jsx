@@ -8,8 +8,8 @@ export const ContactPartition = ()=>{
         </h1>
 
         <a target="_blank" rel="noopener noreferrer" className="relative border-2 rounded-md font-semibold overflow-hidden group px-10 py-2 " href={`tel:${import.meta.env.VITE_PHONE}`}>
-          <span className="relative z-10 text-slate-900 font-bold flex gap-5 items-center text-md">
-            <img className="w-8 h-8" src={phoneimg} />
+          <span className="relative z-10 text-slate-900 font-bold flex gap-4 items-center justify-center text-md">
+            <img className="w-7 h-7" src={phoneimg} />
             CALL US
           </span>
 
