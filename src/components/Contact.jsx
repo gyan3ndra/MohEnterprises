@@ -69,7 +69,7 @@ const Contact = () => {
   //   setinput(prev => ({ ...prev, [e.target.name]: e.target.value }))
   // }
   return (
-    <section className='pt-20 min-h-screen p-4 bg-white'>
+    <section className='pt-18 min-h-screen p-4 bg-white'>
       <section className='max-w-7xl mx-auto p-0 sm:p-4 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
         <div>
           <h1 className='text-4xl sm:text-5xl pl-1 md:text-6xl leading-tight font-bold'>Lets Start A Converstaion!</h1>
@@ -98,7 +98,7 @@ const Contact = () => {
               <input name='lastname' className='min-w-0 w-full h-13 border rounded-md' type="text" placeholder='Last Name​'/>
             </span>
             <input name='email' className='w-full h-13 focus:outline-0 border rounded-md p-3' type="email" placeholder='Email​' required/>
-            <textarea name='message' className='w-full min-h-35 focus:outline-0 border p-3' placeholder='How can we help?'></textarea>
+            <textarea name='message' className='w-full flex-1 min-h-35 focus:outline-0 border p-3' placeholder='How can we help?'></textarea>
             <button type='submit' className='text-white p-4 w-full hover:bg-[#ff513d] bg-[#F87061] rounded-md font-semibold cursor-pointer hover:scale-101 transition-all duration-200'>Submit</button>
           </form>
         </div>

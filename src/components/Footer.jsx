@@ -36,7 +36,7 @@ const Footer = () => (
           <ul>
             <li>{import.meta.env.VITE_PHONE}</li>
             <li>{import.meta.env.VITE_EMAIL}</li>
-            <li>Indore, India</li>
+            <li>Madhya Pradesh, India</li>
           </ul>
         </div>
       </div>
