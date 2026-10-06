@@ -141,7 +141,7 @@ I'd like to know the price, installation details, and availability. Please share
       <div className='pt-5 h-full order-2 lg:order-1'>
         <div className='flex justify-between items-center'>
           <h3 className='text-lg p-2 pr-6 pl-5 rounded-2xl bg-slate-900 text-white font-semibold w-fit'>KIT {kitnumber}</h3>
-          <button onClick={() => setviewlist(true)} className='text-sm mr-3 md:mr-5 p-2 transition-all duration-200 hover:bg-blue-700 pr-6 pl-5 rounded-2xl bg-blue-600 cursor-pointer text-white font-semibold w-fit flex items-center gap-2'>View Items <img src={externallinkimg} className='w-5 h-5 invert' /></button>
+          <button onClick={() => setviewlist(true)} className='text-sm mr-3 md:mr-5 p-2 transition-all duration-200 hover:bg-blue-700 pr-6 pl-5 rounded-2xl bg-blue-500 cursor-pointer text-white font-semibold w-fit flex items-center gap-2'>View Items <img src={externallinkimg} className='w-5 h-5 invert' /></button>
         </div>
         <h1 className='mt-3 text-3xl md:text-4xl font-extrabold text-slate-900'>{kits.kitName}</h1>
         <h3 className='text-md p-1 pr-6 pl-5 rounded-2xl bg-slate-100 text-slate-700 border-2 mt-5 w-fit'>{kits.kitCategory}</h3>

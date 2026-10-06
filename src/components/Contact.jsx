@@ -1,37 +1,73 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import { whatsappUrl } from './Partition'
 import externallinkimg from '../assets/externallink.png'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
+  const serviceId = import.meta.env.VITE_SERVICE_ID
+  const templateId = import.meta.env.VITE_TEMPLATE_ID
+  const publicKey = import.meta.env.VITE_PUBLIC_KEY
   const contactdetails = [
     {
       title: 'Phone​',
-      content:`${import.meta.env.VITE_PHONE}`
+      content: `${import.meta.env.VITE_PHONE}`
     },
     {
       title: 'Email',
-      content:`${import.meta.env.VITE_EMAIL}`
+      content: `${import.meta.env.VITE_EMAIL}`
     },
     {
       title: 'Head Office​',
-      content: 'rb-road randikhana, room number 5'
+      content: 'Behind dhakad petrolpump jhansi tirah Shivpuri Madhya Pradesh'
     },
     {
       title: 'Working Hours',
-      content: 'monday-friday 24/7 on bed'
+      content: 'monday-saturday 9am - 8pm'
     }
   ]
-  const [input,setinput] = useState({
-    firstname:'',
-    lastname:'',
-    email:'',
-    message:''
-  })
+  // const [input, setinput] = useState({
+  //   firstname: '',
+  //   lastname: '',
+  //   email: '',
+  //   message: ''
+  // })
 
-  const handleChange = (e)=>{
-    setinput(prev=>({...prev,[e.target.name]:e.target.value}))
+  const sendEmail = async (e) => {
+    e.preventDefault()
+    const firstname = e.target.firstname.value.trim()
+    const lastname = e.target.lastname.value.trim()
+    const email = e.target.email.value.trim()
+    const message = e.target.message.value.trim()
+
+    if (!firstname || !lastname || !email || !message) {
+      alert('Please fill all fields')
+      return
+    }
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: firstname + ' ' + lastname,
+          email: email,
+          message: message
+        },
+        publicKey
+      )
+
+      alert('Message sent successfully!')
+      e.target.reset()
+
+    } catch (error) {
+      console.log(error)
+      alert('Failed to send message')
+    }
   }
+
+  // const handleChange = (e) => {
+  //   setinput(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  // }
   return (
     <section className='pt-20 min-h-screen p-4 bg-white'>
       <section className='max-w-7xl mx-auto p-0 sm:p-4 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
@@ -52,22 +88,22 @@ const Contact = () => {
             }
           </div>
           <p className='font-light text-md md:text-lg mt-3 mb-2'>Tell us about your home or business and get a personalized solar solution based on your energy needs.</p>
-          <a href={whatsappUrl} className='text-[14px] font-semibold bg-[#F87061] text-white hover:bg-orange-800 transition-all duration-300 p-2 pr-4 pl-4 rounded-md flex gap-2 w-fit items-center'>Get a Solar Estimate <img className='invert h-5 w-5' src={externallinkimg}/></a>
+          <a href={whatsappUrl} className='text-[14px] font-semibold bg-[#F87061] text-white hover:bg-orange-800 transition-all duration-300 p-2 pr-4 pl-4 rounded-md flex gap-2 w-fit items-center'>Get a Solar Estimate <img className='invert h-5 w-5' src={externallinkimg} /></a>
         </div>
         <div className='flex justify-center w-full p-0 sm:p-2'>
-          <form className='w-full lg:w-[80%] max-w-xl bg-white p-3 sm:p-5 gap-3 flex flex-col shadow-lg shadow-slate-900/20 rounded-2xl'>
+          <form onSubmit={sendEmail} className='w-full lg:w-[80%] max-w-xl bg-white p-3 sm:p-5 gap-3 flex flex-col shadow-lg shadow-slate-900/20 rounded-2xl'>
             <h3 className='text-center font-bold text-3xl mb-3'>Contact Us</h3>
             <span className='grid grid-cols-1 sm:grid-cols-2 gap-3 *:p-3 *:focus:outline-0'>
-              <input onChange={handleChange} name='firstname' className='min-w-0 w-full h-13 border rounded-md' type="text" placeholder='First Name​' />
-              <input onChange={handleChange} name='lastname' className='min-w-0 w-full h-13 border rounded-md' type="text" placeholder='Last Name​' />
+              <input name='firstname' className='min-w-0 w-full h-13 border rounded-md' type="text" placeholder='First Name​' required/>
+              <input name='lastname' className='min-w-0 w-full h-13 border rounded-md' type="text" placeholder='Last Name​'/>
             </span>
-            <input onChange={handleChange} name='email' className='w-full h-13 focus:outline-0 border rounded-md p-3' type="text" placeholder='Email​' />
-            <textarea onChange={handleChange} name='message' className='w-full min-h-35 focus:outline-0 border p-3' placeholder='How can we help?'></textarea>
+            <input name='email' className='w-full h-13 focus:outline-0 border rounded-md p-3' type="email" placeholder='Email​' required/>
+            <textarea name='message' className='w-full min-h-35 focus:outline-0 border p-3' placeholder='How can we help?'></textarea>
             <button type='submit' className='text-white p-4 w-full hover:bg-[#ff513d] bg-[#F87061] rounded-md font-semibold cursor-pointer hover:scale-101 transition-all duration-200'>Submit</button>
           </form>
         </div>
       </section>
-      
+
     </section>
   )
 }

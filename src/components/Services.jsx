@@ -187,8 +187,8 @@ const Services = () => {
             and product delivery services.
           </p>
           <a
-            href="#project-work"
-            className="mt-8 inline-flex min-h-11 items-center justify-center rounded-md bg-[#F87061] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#ba4b3e]"
+            onClick={()=>document.getElementById('project-work').scrollIntoView({behavior:'smooth'})}
+            className="mt-8 cursor-pointer inline-flex min-h-11 items-center justify-center rounded-md bg-[#F87061] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#ba4b3e]"
           >
             View our work
           </a>
