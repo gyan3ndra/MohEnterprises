@@ -16,8 +16,8 @@ try {
 
 const app = express()
 app.use(cors({
-    // origin:"http://localhost:5173",
-    origin:true,
+    origin:["http://localhost:5173","https://mohenterprises.onrender.com"],
+    // origin:true,
 }))
 app.use(express.json())
 app.use('/products',products)
