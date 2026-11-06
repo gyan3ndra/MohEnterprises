@@ -16,7 +16,7 @@ try {
 
 const app = express()
 app.use(cors({
-    origin:["http://localhost:5173","https://mohenterprises.onrender.com"],
+    origin:["http://localhost:5173","https://moh-enterprises.vercel.app"],
     // origin:true,
 }))
 app.use(express.json())
